@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: essential-open-api
+    ports:
+      - "5100:5100"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_APP: wsgi.py
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: "5100"
+      FLASK_DEBUG: "1"
+    command: flask run --debug
