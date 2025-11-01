@@ -1,2 +1,2 @@
 # essential-open-api
-Essential Open API é uma API Flask em Python que oferece acesso dinâmico a classes, instâncias e relacionamentos do meta-modelo Essential, compatível com a Essential Utility API v3. Além disso, permite publicar repositórios e monitorar o progresso em tempo real no Essential Open Source.
+Essential Open API is a Python Flask API that provides dynamic access to classes, instances, and relationships from the Essential meta-model, compatible with Essential Utility API v3. It also enables repository publishing and real-time progress monitoring within Essential Open Source.
