@@ -46,7 +46,7 @@ The `demo/` directory contains a static HTML page that interacts with the API an
 
 - Configure the API base URL in the header field.
 - Trigger repository publishing and monitor real-time progress with a progress bar.
-- Inspect the `/api/list_items?class=Currency` endpoint response.
+- Inspect the `/api/classes/Currency/instances` endpoint response.
 
 To view the demo, open `demo/index.html` in a browser (or serve the folder via a simple static server). Ensure the API is running and accessible from the configured base URL.
 
