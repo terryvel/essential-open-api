@@ -30,7 +30,7 @@ const fetchExamples = async () => {
   output.textContent = "Loading...";
 
   try {
-    const response = await fetch(`${getApiBaseUrl()}/list_items?class=Currency`);
+    const response = await fetch(`${getApiBaseUrl()}/classes/Currency/instances`);
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
