@@ -96,3 +96,38 @@ def get_publish_status(job_id: str) -> Optional[Tuple[str, str]]:
     except Exception as exc:  # pylint: disable=broad-except
         print(f"Error while checking publish status: {exc}")
         return None
+
+
+def save_project() -> bool:
+    """Persist the current Protégé project to disk."""
+    project = get_project()
+    if project is None:
+        print("Cannot save project: Protégé project not loaded.")
+        return False
+
+    try:
+        start_jvm()
+        ArrayList = jpype.JClass("java.util.ArrayList")
+        errors = ArrayList()
+
+        save_method = getattr(project, "save", None)
+        if callable(save_method):
+            project.save(errors)
+        else:
+            legacy_save = getattr(project, "saveProject", None)
+            if callable(legacy_save):
+                legacy_save()
+            else:
+                print("Project object does not expose a save/saveProject method.")
+                return False
+
+        if hasattr(errors, "isEmpty") and not errors.isEmpty():
+            error_messages = [str(err) for err in errors]
+            print(f"Errors while saving project: {error_messages}")
+            return False
+
+        print("Protégé project saved successfully.")
+        return True
+    except Exception as exc:  # pylint: disable=broad-except
+        print(f"Error while saving project: {exc}")
+        return False
