@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import json
 import re
 from typing import List, Optional
+from pathlib import Path
 
 from flask import Blueprint, jsonify, request
 
@@ -37,6 +38,7 @@ class CreatedInstance:
     instance: object
     description: Optional[str]
     external_summary: Optional[dict]
+
 
 @api_bp.get("/list_items")
 def list_instances():
@@ -99,6 +101,171 @@ def publish_status():
 
     status, logs = result
     return jsonify({"jobId": job_id, "status": status, "logs": logs})
+
+
+@api_bp.get("/classes/")
+def list_root_classes():
+    """Return the list of classes at the root (without superclasses)."""
+    kb = get_knowledge_base()
+    if kb is None:
+        return jsonify({"error": "Knowledge Base not loaded!"}), 500
+
+    try:
+        classes = kb.getClses() or []
+    except Exception as exc:
+        return jsonify({"error": f"Failed to enumerate classes: {exc}"}), 500
+
+    root_classes = []
+    for cls in classes:
+        try:
+            supers = cls.getDirectSuperclasses() or []
+        except Exception:
+            continue
+        if supers:
+            continue
+
+        try:
+            title = str(cls.getBrowserText())
+        except Exception:
+            title = ""
+        try:
+            subclass_count = int(cls.getDirectSubclassCount())
+        except Exception:
+            subclass_count = 0
+
+        root_classes.append(
+            {
+                "id": str(cls.getName()),
+                "title": title,
+                "hasChildren": bool(subclass_count),
+                "count": len(cls.getDirectInstances())
+            }
+        )
+
+    return jsonify(root_classes)
+
+
+@api_bp.get("/classes/<string:class_name>/")
+def list_child_classes(class_name: str):
+    """Return direct subclasses for a given class."""
+    kb = get_knowledge_base()
+    if kb is None:
+        return jsonify({"error": "Knowledge Base not loaded!"}), 500
+
+    cls = kb.getCls(class_name)
+    if not cls:
+        return jsonify({"error": f"Class '{class_name}' not found!"}), 404
+
+    try:
+        subclasses = cls.getDirectSubclasses() or []
+    except Exception as exc:
+        return jsonify({"error": f"Failed to enumerate subclasses: {exc}"}), 500
+
+    children = []
+    for subcls in subclasses:
+        try:
+            title = str(subcls.getBrowserText())
+        except Exception:
+            title = ""
+        try:
+            subclass_count = int(subcls.getDirectSubclassCount())
+        except Exception:
+            subclass_count = 0
+        children.append(
+            {
+                "id": str(subcls.getName()),
+                "title": title,
+                "hasChildren": bool(subclass_count),
+                "count": len(subcls.getDirectInstances())
+            }
+        )
+
+    return jsonify(children)
+
+@api_bp.get("/classes/<string:class_name>/form")
+def get_class_form(class_name: str):
+    """Return the stored form specification JSON for the given class."""
+    forms_dir = Path(__file__).resolve().parent.parent / "resources" / "forms"
+    form_path = forms_dir / f"{class_name}.json"
+
+    if not form_path.exists():
+        return jsonify({"error": f"Form for class '{class_name}' not found."}), 404
+
+    try:
+        data = json.loads(form_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return jsonify({"error": f"Failed to load form for '{class_name}': {exc}"}), 500
+
+    return jsonify(data)
+
+@api_bp.get("/classes/<string:class_name>/slots")
+def list_class_slots(class_name: str):
+    """Return template slots for the given class."""
+    kb = get_knowledge_base()
+    if kb is None:
+        return jsonify({"error": "Knowledge Base not loaded!"}), 500
+
+    cls = kb.getCls(class_name)
+    if not cls:
+        return jsonify({"error": f"Class '{class_name}' not found!"}), 404
+
+    try:
+        template_slots = cls.getTemplateSlots() or []
+    except Exception as exc:
+        return jsonify({"error": f"Failed to fetch template slots: {exc}"}), 500
+
+    resultados = []
+    for slot in template_slots:
+        try:
+            name = str(slot.getName())
+        except Exception:
+            name = ""
+
+        try:
+            value_type = str(slot.getValueType())
+        except Exception:
+            value_type = ""
+
+        try:
+            min_cardinality = int(cls.getTemplateSlotMinimumCardinality(slot))
+        except Exception:
+            min_cardinality = None
+
+        try:
+            max_cardinality = int(cls.getTemplateSlotMaximumCardinality(slot))
+        except Exception:
+            max_cardinality = None
+
+        try:
+            label = slot.getDirectBrowserText()
+        except Exception:
+            label = None
+
+        if not label:
+            try:
+                label_slot = cls.getKnowledgeBase().getSlot("label")
+            except Exception:
+                label_slot = None
+            if label_slot:
+                try:
+                    label_value = slot.getOwnSlotValue(label_slot)
+                    label = str(label_value) if label_value else name
+                except Exception:
+                    label = name
+            else:
+                label = name
+
+        resultados.append(
+            {
+                "slot": name,
+                "label": str(label),
+                "type": value_type,
+                "min_cardinality": min_cardinality,
+                "max_cardinality": max_cardinality,
+            }
+        )
+
+    return jsonify(resultados)
 
 # ----- Essential Utility API -----
 
@@ -646,6 +813,7 @@ def create_instances_batch():
         201,
     )
 
+
 @api_bp.get("/instances/<string:instance_id>")
 def get_instance(instance_id: str):
     """Return details for a specific instance."""
@@ -675,6 +843,8 @@ def get_instance(instance_id: str):
 
     data = frame_to_dict(inst, allowed=allowed, max_depth=max_depth)
     return jsonify({"instance": data, "maxDepthUsed": max_depth})
+
+
 @api_bp.get("/classes/<string:class_name>/instances")
 def list_instances_by_class(class_name):
     """
@@ -683,6 +853,7 @@ def list_instances_by_class(class_name):
       - maxdepth=N                 (se N>3 -> slots é obrigatório)
       - start=S                    (default 0; aceita 0-based ou 1-based)
       - count=C                    (default = todos a partir de start)
+      - directinstances=true|false (default false -> inclui subclasses concretas)
     Retorno inclui: instances, count, total, nextPage (quando houver).
     """
     kb = get_knowledge_base()
@@ -714,6 +885,10 @@ def list_instances_by_class(class_name):
             "hint": "Use ?slots=slotA^slotB^slotC"
         }), 400
 
+    # --- directinstances ---
+    raw_direct = request.args.get("directinstances", "false")
+    direct_only = str(raw_direct).strip().lower() in ("1", "true", "t", "yes", "y", "on")
+
     # --- paginação: start / count ---
     # aceita start=0 (zero-based) ou 1-based; internamente converte para zero-based
     try:
@@ -732,8 +907,55 @@ def list_instances_by_class(class_name):
 
     # --- total e slicing ---
     # Pegamos a lista completa para paginar (ordem natural do Protégé)
+    def is_abstract(c):
+        try:
+            return bool(c.isAbstract())
+        except Exception:
+            return False
+
+    def unique_by_name(instances):
+        seen = set()
+        deduped = []
+        for inst in instances:
+            try:
+                name = inst.getName()
+            except Exception:
+                name = None
+            key = str(name) if name is not None else None
+            if key and key in seen:
+                continue
+            if key:
+                seen.add(key)
+            deduped.append(inst)
+        return deduped
+
+    def gather_instances(base_cls):
+        if direct_only:
+            try:
+                return unique_by_name(list(base_cls.getDirectInstances() or []))
+            except Exception:
+                return []
+
+        instances_collected = []
+        try:
+            subclasses = list(base_cls.getSubclasses() or [])
+        except Exception:
+            subclasses = []
+
+        candidate_classes = [base_cls] + subclasses
+        for c in candidate_classes:
+            if is_abstract(c):
+                continue
+            try:
+                insts = c.getInstances() or []
+            except Exception:
+                insts = []
+            instances_collected.extend(insts)
+
+        return unique_by_name(instances_collected)
+
     try:
-        all_instances = list(cls.getInstances())
+        all_instances = gather_instances(cls)
     except Exception as e:
         return jsonify({"error": f"Failed to enumerate instances: {e}"}), 500
 
