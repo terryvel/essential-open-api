@@ -1,0 +1,92 @@
+{
+  "Business_Capability_Chain_Type": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "business_capability_chain_type_label",
+          "label": "Business Capability Chain Type Label",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "used_in_business_capability_chain",
+          "label": "Used In Business Capability Chain",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "bus_conceptual_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "lifecycle_model_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "performance_measures",
+          "label": "performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        }
+      ]
+    }
+  ]
+}

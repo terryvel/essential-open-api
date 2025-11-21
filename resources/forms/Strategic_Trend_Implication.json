@@ -1,0 +1,264 @@
+{
+  "Strategic_Trend_Implication": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "TextFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "sti_implication_for_trend",
+          "label": "Strategic Trend",
+          "widget_type": "InstanceFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "sti_label",
+          "label": "Implication Label",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 4
+        },
+        {
+          "slot": "sti_priority_score",
+          "label": "Priority Score",
+          "widget_type": "IntegerFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "sti_implication_confidence_level",
+          "label": "Confidence %",
+          "widget_type": "FloatFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "sti_earliest_impact_date_iso_8601",
+          "label": "Earliest Impact Date (YYYY-MM-DD",
+          "widget_type": "TextFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "sti_latest_impact_date_iso_8601",
+          "label": "Latest Impact Date (YYYY-MM-DD",
+          "widget_type": "TextFieldWidget",
+          "order": 8
+        },
+        {
+          "slot": "sti_lifecycle_status",
+          "label": "Implication Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 9
+        },
+        {
+          "slot": "sti_geo_scope",
+          "label": "Geographic Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "sti_business_environment_impacts",
+          "label": "Business Environment Impacts",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "bus_env_factor_weighted_dependencies",
+          "label": "Business Environment Weighted Dependencies",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "sti_enterprise_impacts",
+          "label": "Enterprise Impacts",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "sti_service_quality_impacts",
+          "label": "Service Quality Impacts",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "sti_cost_impacts",
+          "label": "Cost Impacts",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "sti_revenue_impacts",
+          "label": "Revenue Impacts",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 29
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 30
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 33
+        },
+        {
+          "slot": "strategy_contained_in_arch_state",
+          "label": "Strategy Contained In Arch State",
+          "widget_type": "InstanceListWidget",
+          "order": 34
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "system_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 35
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "system_content_lifecycle_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 36
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "system_creation_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 38
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "system_content_visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 39
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "system_last_modified_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 40
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "Application_Function_Implementation": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "AutoTextWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "app_func_impl_name",
+          "label": "Function Name",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "application_function_implementation_provided_by",
+          "label": "Provided By",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "application_function_impl_architecture",
+          "label": "Dynamic Application Provider Architecture",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "implements_application_function",
+          "label": "Implements Application Function",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "inverse_of_delivers_app_func_impl",
+          "label": "Delivered by Software Component",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "app_func_impl_protocol",
+          "label": "Invocation Protocol",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        },
+        {
+          "slot": "uses_information_representation",
+          "label": "Information Used",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "supports_business_process_appfunimpl",
+          "label": "Supports Business Process",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "inverse_of_physical_process_automated_by",
+          "label": "Physical Process Automated",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "afi_maps_info_data",
+          "label": "Performs Information / Data Mapping",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "app_func_impl_logic",
+          "label": "Functional Logic Descriptions",
+          "widget_type": "StringListWidget",
+          "order": 13
+        },
+        {
+          "slot": "app_fun_impl_requires_tech_cap",
+          "label": "Requires Technology Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "app_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "app_func_impl_creates_data_in",
+          "label": "Creates Data ",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "app_func_impl_reads_data_from",
+          "label": "Reads Data",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "app_func_impl_updates_data_in",
+          "label": "Updates Data",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "app_func_impl_deletes_data_from",
+          "label": "Deletes Data",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        }
+      ]
+    }
+  ]
+}

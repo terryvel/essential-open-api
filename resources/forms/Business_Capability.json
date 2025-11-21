@@ -1,0 +1,282 @@
+{
+  "Business_Capability": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "business_capability_id",
+          "label": "Identifier",
+          "widget_type": "TextFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 2
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 3
+        },
+        {
+          "slot": "business_capability_level",
+          "label": "Business Capability Level",
+          "widget_type": "ComboBoxWidget",
+          "order": 4
+        },
+        {
+          "slot": "business_capability_purpose",
+          "label": "Purpose",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "belongs_to_business_domain",
+          "label": "Business Domain",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "supports_business_capabilities",
+          "label": "Parent Business Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "buscap_contextual_supports_buscap",
+          "label": "Roles within Parent Business Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "contained_business_capabilities",
+          "label": "Contained Business Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "realised_by_business_processes",
+          "label": "Realised By Business Processes",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "business_capability_requires_information",
+          "label": "Supporting Information",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "requires_skill_types",
+          "label": "Requires Skill Types",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "known_business_issues",
+          "label": "Known Related Business Issues",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "defining_business_capability_chain",
+          "label": "Defining Business Capability Chain",
+          "widget_type": "InstanceFieldWidget",
+          "order": 14
+        },
+        {
+          "slot": "business_objectives_for_business_capability",
+          "label": "Business Objectives Supported by this Business Capability",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "business_principles",
+          "label": "Related Business Architecture Principles",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "business_capability_index",
+          "label": "Business Capability Index",
+          "widget_type": "IntegerFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "bus_cap_supporting_app_caps",
+          "label": "Supporting Application Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "bus_conceptual_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 29
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 30
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 33
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 34
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 35
+        },
+        {
+          "slot": "regulated_data_usages",
+          "label": "Regulated Data Usages",
+          "widget_type": "InstanceListWidget",
+          "order": 36
+        },
+        {
+          "slot": "bus_env_factor_weighted_dependencies",
+          "label": "bus_env_factor_weighted_dependencies",
+          "widget_type": "InstanceListWidget",
+          "order": 40
+        },
+        {
+          "slot": "short_name",
+          "label": "short_name",
+          "widget_type": "TextFieldWidget",
+          "order": 43
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "system_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 37
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "system_content_visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 38
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "system_creation_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 39
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "system_last_modified_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 41
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "system_content_lifecycle_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 42
+        }
+      ]
+    }
+  ]
+}

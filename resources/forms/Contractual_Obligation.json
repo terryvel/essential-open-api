@@ -1,0 +1,92 @@
+{
+  "Contractual_Obligation": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "obligation_to_contracts",
+          "label": "Contracts",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "obligation_applies_to",
+          "label": "Obligation Applies To",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        }
+      ]
+    }
+  ]
+}

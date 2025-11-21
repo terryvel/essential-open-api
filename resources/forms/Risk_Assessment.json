@@ -1,0 +1,198 @@
+{
+  "Risk_Assessment": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "ra_assessed_risk",
+          "label": "Assessed Risk",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "ra_assessment_date_ISO8601",
+          "label": "Assessment Date (YYYY-MM-DD",
+          "widget_type": "TextFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "ra_risk_probability",
+          "label": "Risk Probability %",
+          "widget_type": "IntegerFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "ra_risk_impact",
+          "label": "Risk Impact",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 5
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "name",
+          "label": "Full Name",
+          "widget_type": "AutoTextWidget",
+          "order": 7
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 15
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 18
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "System Creation Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 25
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "System Content Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 26
+        },
+        {
+          "slot": "system_author_id",
+          "label": "System Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 27
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "System Last Modified Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 28
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "System Content Visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 29
+        }
+      ]
+    }
+  ]
+}

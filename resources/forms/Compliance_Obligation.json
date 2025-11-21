@@ -1,0 +1,104 @@
+{
+  "Compliance_Obligation": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "obligation_to_regulations",
+          "label": "Regulations",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "obligation_applies_to",
+          "label": "Impacted Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 4
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "compliance_obligation_licenses",
+          "label": "Relevent Licenses",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "compliance_obligation_lifecycle_status",
+          "label": "Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 14
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        }
+      ]
+    }
+  ]
+}

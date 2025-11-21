@@ -1,0 +1,289 @@
+{
+  "Architecture_State": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "as_contained_in_roadmaps",
+          "label": "Parent Roadmaps",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "start_date_iso_8601",
+          "label": "Start Date (yyyy-mm-dd",
+          "widget_type": "TextFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "end_date_iso_8601",
+          "label": "End Date (yyyy-mm-dd",
+          "widget_type": "TextFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "arch_state_business_conceptual",
+          "label": "Business Conceptual Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "start_date",
+          "label": "State Valid From Date (DEPRECATED",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "end_date",
+          "label": "State Valid To Date (DEPRECATED",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        },
+        {
+          "slot": "arch_state_business_logical",
+          "label": "Business Logical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "arch_state_business_physical",
+          "label": "Business Physical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "arch_state_business_relations",
+          "label": "Business Relations",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "arch_state_application_conceptual",
+          "label": "Application Conceptual Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "arch_state_application_logical",
+          "label": "Application Logical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "arch_state_application_physical",
+          "label": "Application Physical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "arch_state_application_relations",
+          "label": "Application Relations",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "arch_state_information_conceptual",
+          "label": "Information Conceptual Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "arch_state_information_logical",
+          "label": "Information Logical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "arch_state_physical_information",
+          "label": "Physical Information Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "arch_state_information_relations",
+          "label": "Information Relations",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "arch_state_technology_conceptual",
+          "label": "Technology Conceptual Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "arch_state_technology_logical",
+          "label": "Technology Logical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "arch_state_technology_physical",
+          "label": "Technology Physical Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "arch_state_technology_relations",
+          "label": "Technology Relations",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "arch_state_strategy_management",
+          "label": "Strategy Management Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "arch_state_security_management",
+          "label": "Security Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 26
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 30
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 33
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 34
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 35
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 36
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 38
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 39
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 40
+        },
+        {
+          "slot": "strategy_contained_in_arch_state",
+          "label": "strategy_contained_in_arch_state",
+          "widget_type": "InstanceListWidget",
+          "order": 42
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 43
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 44
+        },
+        {
+          "slot": "arch_state_objectives",
+          "label": "Arch State Objectives",
+          "widget_type": "InstanceListWidget",
+          "order": 45
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 41
+        }
+      ]
+    }
+  ]
+}

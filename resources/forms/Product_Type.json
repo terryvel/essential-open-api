@@ -1,0 +1,181 @@
+{
+  "Product_Type": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "product_type_sourced_externally",
+          "label": "Sourced Externally?",
+          "widget_type": "CheckBoxWidget",
+          "order": 3
+        },
+        {
+          "slot": "product_type_internal_facing",
+          "label": "Internal Facing",
+          "widget_type": "ComboBoxWidget",
+          "order": 4
+        },
+        {
+          "slot": "product_type_external_facing",
+          "label": "External Facing",
+          "widget_type": "ComboBoxWidget",
+          "order": 5
+        },
+        {
+          "slot": "product_type_realises_concept",
+          "label": "Realisation of Product Concept",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "product_type_target_audience",
+          "label": "Product Type Target Audience",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "product_type_produced_by_process",
+          "label": "Produced by Business Processes",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "pt_static_architecture",
+          "label": "Static Product Type Dependencies",
+          "widget_type": "InstanceFieldWidget",
+          "order": 9
+        },
+        {
+          "slot": "product_type_instances",
+          "label": "Products of this Type",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "product_type_information_held",
+          "label": "Product Information",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "bus_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "product_type_brands",
+          "label": "Product Type Brands",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "pt_delivers_revenue_types",
+          "label": "Pt Delivers Revenue Types",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "contained_product_types",
+          "label": "Contained Product Types",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "product_type_via_channel_types",
+          "label": "Product Type Via Channel Types",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "pt_product_type_features",
+          "label": "Pt Product Type Features",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 24
+        }
+      ]
+    }
+  ]
+}

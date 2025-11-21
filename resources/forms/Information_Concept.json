@@ -1,0 +1,330 @@
+{
+  "Information_Concept": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "info_concept_supports_bus_driver",
+          "label": "Supported Business Drivers",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "belongs_to_business_domain_information",
+          "label": "Business Domain",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "supporting_data_subjects",
+          "label": "Supporting Data Subjects",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "has_information_views",
+          "label": "Information Views",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "information_principles_relevant_to_concept",
+          "label": "Information Principles Relevant To Concept",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "relevant_information_objectives",
+          "label": "Relevant Information Objectives",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "related_information_concepts",
+          "label": "Related Information Concepts",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "known_information_issues",
+          "label": "Known Information Issues",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "info_conceptual_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "information_concept_id",
+          "label": "Information Concept Id",
+          "widget_type": "TextFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "info_concept_info_domain",
+          "label": "Info Concept Info Domain",
+          "widget_type": "InstanceFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 25
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 26
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 27
+        },
+        {
+          "slot": "cost_types_for_element",
+          "label": "Cost Types For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "sequence_number",
+          "label": "Sequence Number",
+          "widget_type": "IntegerFieldWidget",
+          "order": 32
+        },
+        {
+          "slot": "ea_notes",
+          "label": "Ea Notes",
+          "widget_type": "TextFieldWidget",
+          "order": 33
+        },
+        {
+          "slot": "ea_scope",
+          "label": "Ea Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 34
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "Impacting Change Activities",
+          "widget_type": "InstanceListWidget",
+          "order": 35
+        },
+        {
+          "slot": "ea_reference",
+          "label": "Ea Reference",
+          "widget_type": "TextFieldWidget",
+          "order": 36
+        },
+        {
+          "slot": "ea_subject_to_regulations",
+          "label": "Ea Subject To Regulations",
+          "widget_type": "InstanceListWidget",
+          "order": 38
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "Impacting Decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 39
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 42
+        },
+        {
+          "slot": "related_from_information_concepts",
+          "label": "Related From Information Concepts",
+          "widget_type": "InstanceListWidget",
+          "order": 43
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "Budgets For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 46
+        },
+        {
+          "slot": "il_managed_by_services",
+          "label": "Il Managed By Services",
+          "widget_type": "InstanceListWidget",
+          "order": 47
+        },
+        {
+          "slot": "ea_requirements",
+          "label": "Ea Requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 49
+        },
+        {
+          "slot": "il_security_classifications",
+          "label": "Il Security Classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 50
+        },
+        {
+          "slot": "target_performance_measures",
+          "label": "Target Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 51
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 30
+        },
+        {
+          "slot": "system_content_quality_last_reviewed_datetime_iso8601",
+          "label": "System Content Quality Last Reviewed Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 37
+        },
+        {
+          "slot": "system_content_quality_last_reviewer_id",
+          "label": "System Content Quality Last Reviewer Id",
+          "widget_type": "TextFieldWidget",
+          "order": 40
+        },
+        {
+          "slot": "system_is_published",
+          "label": "System Is Published",
+          "widget_type": "CheckBoxWidget",
+          "order": 41
+        },
+        {
+          "slot": "system_content_quality_status",
+          "label": "System Content Quality Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 44
+        },
+        {
+          "slot": "system_ea_reference_instance_counter",
+          "label": "system_ea_reference_instance_counter",
+          "widget_type": "IntegerFieldWidget",
+          "order": 45
+        },
+        {
+          "slot": "system_content_quality_reviews",
+          "label": "System Content Quality Reviews",
+          "widget_type": "InstanceListWidget",
+          "order": 48
+        }
+      ]
+    }
+  ]
+}

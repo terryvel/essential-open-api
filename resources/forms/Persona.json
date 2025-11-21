@@ -1,0 +1,253 @@
+{
+  "Persona": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Actor Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "email",
+          "label": "Email",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 4
+        },
+        {
+          "slot": "is_member_of_actor",
+          "label": "Parent Organisations",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "external_to_enterprise",
+          "label": "External?",
+          "widget_type": "CheckBoxWidget",
+          "order": 6
+        },
+        {
+          "slot": "actor_plays_role",
+          "label": "Roles Played By Actor",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "actor_has_jobs",
+          "label": "Job Positions",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "indivactor_skill_level",
+          "label": "Overall Skill Level",
+          "widget_type": "InstanceFieldWidget",
+          "order": 9
+        },
+        {
+          "slot": "actor_has_skills",
+          "label": "Actor's Skills",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "indivactor_expertise",
+          "label": "Subject Matter Expertise",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "actor_objectives",
+          "label": "Actor's Objectives",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "actor_assigned_objectives",
+          "label": "Assigned Objectives",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "actor_business_scope",
+          "label": "Business Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "known_business_issues",
+          "label": "Known Business Issues",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "actor_based_at_site",
+          "label": "Primary Base Site(s",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "bus_physical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "indvactor_managed_individuals",
+          "label": "Indvactor Managed Individuals",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "indvactor_managers",
+          "label": "Indvactor Managers",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "indivactor_skill_certifications",
+          "label": "Indivactor Skill Certifications",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 30
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 31
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 33
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 34
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 36
+        },
+        {
+          "slot": "performs_physical_processes",
+          "label": "performs_physical_processes",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 38
+        },
+        {
+          "slot": "persona_customer_journeys",
+          "label": "Persona Customer Journeys",
+          "widget_type": "InstanceListWidget",
+          "order": 39
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 35
+        }
+      ]
+    }
+  ]
+}

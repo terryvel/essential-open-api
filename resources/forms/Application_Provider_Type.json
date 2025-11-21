@@ -1,0 +1,151 @@
+{
+  "Application_Provider_Type": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "uses_information_representation",
+          "label": "Information Used",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "app_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 13
+        },
+        {
+          "slot": "ea_scope",
+          "label": "Ea Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "Impacting Decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "ap_business_criticality",
+          "label": "Ap Business Criticality",
+          "widget_type": "InstanceFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "Impacting Change Activities",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "Budgets For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "al_security_classifications",
+          "label": "al_security_classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "al_managed_by_services",
+          "label": "al_managed_by_services",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "system_is_published",
+          "label": "system_is_published",
+          "widget_type": "CheckBoxWidget",
+          "order": 18
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "Contract": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "contract_customer",
+          "label": "Customer",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "contract_related_contracts",
+          "label": "Related Contracts",
+          "widget_type": "InstanceListWidget",
+          "order": 4
+        },
+        {
+          "slot": "contract_for",
+          "label": "Contract For",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "contract_cost",
+          "label": "Contract Cost",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "contract_uses_license",
+          "label": "License Used",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "contract_attributes",
+          "label": "Contract Attributes",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "contract_applied",
+          "label": "Contract Applied To",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "contract_applicable_regulations",
+          "label": "Contract Applicable Regulations",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "contract_for_obligations",
+          "label": "Contract For Obligations",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Contract",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "contract_deal_cost",
+          "label": "Deal Cost",
+          "widget_type": "FloatFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "contract_unit_cost",
+          "label": "Unit Cost",
+          "widget_type": "FloatFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "contract_number_of_units",
+          "label": "Number of Units",
+          "widget_type": "IntegerFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "contract_ref",
+          "label": "Contract Ref",
+          "widget_type": "TextFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "contract_start_date_ISO8601",
+          "label": "Contract Start Date ISO8601",
+          "widget_type": "TextFieldWidget",
+          "order": 24
+        },
+        {
+          "slot": "ea_requirements",
+          "label": "Ea Requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "contract_type",
+          "label": "Contract Type",
+          "widget_type": "InstanceFieldWidget",
+          "order": 26
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "Impacting Decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "contract_signature_date_ISO8601",
+          "label": "Contract Signature Date ISO8601",
+          "widget_type": "TextFieldWidget",
+          "order": 28
+        },
+        {
+          "slot": "contract_supplier",
+          "label": "Contract Supplier",
+          "widget_type": "InstanceFieldWidget",
+          "order": 31
+        },
+        {
+          "slot": "ea_scope",
+          "label": "Ea Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        },
+        {
+          "slot": "sl_security_classifications",
+          "label": "Sl Security Classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 33
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "Budgets For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 35
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "Impacting Change Activities",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        },
+        {
+          "slot": "contract_end_date_ISO8601",
+          "label": "Contract End Date ISO8601",
+          "widget_type": "TextFieldWidget",
+          "order": 41
+        },
+        {
+          "slot": "contract_renewal_notice_days",
+          "label": "Contract Renewal Notice Days",
+          "widget_type": "IntegerFieldWidget",
+          "order": 42
+        },
+        {
+          "slot": "contract_renewal_model",
+          "label": "Contract Renewal Model",
+          "widget_type": "InstanceFieldWidget",
+          "order": 43
+        },
+        {
+          "slot": "My ID",
+          "label": "My ID",
+          "widget_type": "TextFieldWidget",
+          "order": 44
+        },
+        {
+          "slot": "short_name",
+          "label": "short_name",
+          "widget_type": "TextFieldWidget",
+          "order": 45
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 29
+        },
+        {
+          "slot": "system_is_published",
+          "label": "System Is Published",
+          "widget_type": "CheckBoxWidget",
+          "order": 30
+        },
+        {
+          "slot": "system_author_id",
+          "label": "System Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 34
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "System Content Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 36
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "system_creation_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 38
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "system_last_modified_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 39
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "System Content Visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 40
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "Adhoc_Revenue_Component": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "rc_revenue_component_of_revenue",
+          "label": "Parent Revenue",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "rc_revenue_component_type",
+          "label": "Revenue Type",
+          "widget_type": "InstanceFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "rc_revenue_component_amount",
+          "label": "Amount",
+          "widget_type": "FloatFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "rc_revenue_currency",
+          "label": "Revenue Currency",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Revenue For Elements",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "rc_revenue_start_date_iso_8601",
+          "label": "Revenue Start Date (yyyy-mm-dd",
+          "widget_type": "TextFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "rc_revenue_end_date_iso_8601",
+          "label": "Revenue End Date (yyyy-mm-dd",
+          "widget_type": "TextFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "rc_revenue_start_date",
+          "label": "Revenue Start Date (DEPRECATED",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        },
+        {
+          "slot": "name",
+          "label": "Full Name",
+          "widget_type": "AutoTextWidget",
+          "order": 9
+        },
+        {
+          "slot": "rc_revenue_end_date",
+          "label": "Revenue End Date (DEPRECATED",
+          "widget_type": "InstanceFieldWidget",
+          "order": 10
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 11
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 25
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 26
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 27
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        }
+      ]
+    }
+  ]
+}

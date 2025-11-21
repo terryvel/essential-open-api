@@ -1,0 +1,127 @@
+{
+  "Service_Quality_Change": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "sqc_service_quality",
+          "label": "Service Quality",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "change_percentage",
+          "label": "Change %",
+          "widget_type": "FloatFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 3
+        },
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "AutoTextWidget",
+          "order": 4
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "element_styling_classes",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "system_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 13
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "system_content_lifecycle_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 14
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "system_creation_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "system_content_visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "system_last_modified_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 18
+        }
+      ]
+    }
+  ]
+}

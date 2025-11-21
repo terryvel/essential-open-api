@@ -1,0 +1,104 @@
+{
+  "Report_Classification": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "report_classification_label",
+          "label": "Report Classification Label",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "report_classification_sequence_number",
+          "label": "Report Classification Sequence Number",
+          "widget_type": "IntegerFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "report_classification_colour",
+          "label": "Report Classification Colour",
+          "widget_type": "TextFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "report_classification_intro",
+          "label": "Report Classification Introduction",
+          "widget_type": "TextAreaWidget",
+          "order": 6
+        },
+        {
+          "slot": "report_classification_contained_reports",
+          "label": "Report Classification Contained Reports",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "lifecycle_model_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "performance_measures",
+          "label": "performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        }
+      ]
+    }
+  ]
+}

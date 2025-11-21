@@ -1,0 +1,228 @@
+{
+  "License": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "license_type",
+          "label": "License Type",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "license_model",
+          "label": "License Model",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "license_start_date",
+          "label": "License Start Date (yyyy-mm-dd",
+          "widget_type": "TextFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "license_months_to_renewal",
+          "label": "Months To Renewal",
+          "widget_type": "IntegerFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "license_approval",
+          "label": "License Approved By",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "license_compatible_with",
+          "label": "License Compatible With",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "license_combined_with",
+          "label": "License Combined With",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "license_compliance_obligations",
+          "label": "License Compliance Obligations",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "license_details",
+          "label": "License Details",
+          "widget_type": "TextAreaWidget",
+          "order": 11
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 24
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 25
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "system_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 30
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "system_content_lifecycle_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 31
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "system_creation_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 32
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "system_last_modified_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 33
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "system_content_visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 34
+        }
+      ]
+    }
+  ]
+}

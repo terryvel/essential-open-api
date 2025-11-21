@@ -1,0 +1,145 @@
+{
+  "Security_Principle": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "sp_related_security_capabilities",
+          "label": "Related Security Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 12
+        },
+        {
+          "slot": "principle_realisation_policies",
+          "label": "Principle Realisation Policies",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "principle_ref",
+          "label": "Principle Ref",
+          "widget_type": "TextFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "impacting_change_activities",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "impacting_decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "budgets_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "ea_scope",
+          "label": "ea_scope",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        },
+        {
+          "slot": "sl_security_classifications",
+          "label": "sl_security_classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_is_published",
+          "label": "system_is_published",
+          "widget_type": "CheckBoxWidget",
+          "order": 13
+        },
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "system_last_modified_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 15
+        }
+      ]
+    }
+  ]
+}

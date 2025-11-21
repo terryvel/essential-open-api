@@ -1,0 +1,205 @@
+{
+  "Product": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "instance_of_product_type",
+          "label": "Instance of Product Type",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "product_consumers",
+          "label": "Product Consumers",
+          "widget_type": "InstanceListWidget",
+          "order": 4
+        },
+        {
+          "slot": "product_implemented_by_process",
+          "label": "Implemented by Business Processes",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "product_information_held",
+          "label": "Product Information",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "prod_static_architecture",
+          "label": "Static Product Dependencies",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "service_related_channel",
+          "label": "Product Channels",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "product_feature_implementations",
+          "label": "Product Feature Implementations",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "bus_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "short_name",
+          "label": "short_name",
+          "widget_type": "TextFieldWidget",
+          "order": 19
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "Budgets For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "Impacting Change Activities",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "product_lifecycle_status",
+          "label": "Product Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 24
+        },
+        {
+          "slot": "product_is_external",
+          "label": "product_is_external",
+          "widget_type": "CheckBoxWidget",
+          "order": 25
+        },
+        {
+          "slot": "ea_requirements",
+          "label": "Ea Requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "Impacting Decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "bl_managed_by_services",
+          "label": "Bl Managed By Services",
+          "widget_type": "InstanceListWidget",
+          "order": 28
+        },
+        {
+          "slot": "ea_scope",
+          "label": "Ea Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "product_supporting_products",
+          "label": "product_supporting_products",
+          "widget_type": "InstanceListWidget",
+          "order": 30
+        },
+        {
+          "slot": "bl_security_classifications",
+          "label": "Bl Security Classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "system_is_published",
+          "label": "System Is Published",
+          "widget_type": "CheckBoxWidget",
+          "order": 23
+        }
+      ]
+    }
+  ]
+}

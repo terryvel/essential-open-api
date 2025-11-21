@@ -1,0 +1,169 @@
+{
+  "Data_Object_Attribute": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "belongs_to_data_object",
+          "label": "Data Object",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "data_attribute_label",
+          "label": "Data Attribute Label",
+          "widget_type": "TextFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "type_for_data_attribute",
+          "label": "Data Type",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 4
+        },
+        {
+          "slot": "data_attribute_cardinality",
+          "label": "Data Attribute Cardinality",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "defined_by_information_concept",
+          "label": "Defined By Information Concept",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "name",
+          "label": "Data Attribute Full Name",
+          "widget_type": "AutoTextWidget",
+          "order": 7
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "info_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "represented_by_attribute",
+          "label": "represented_by_attribute",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        }
+      ]
+    }
+  ]
+}

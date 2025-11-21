@@ -1,0 +1,588 @@
+{
+  "Composite_Application_Provider": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "TextFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "ap_delivery_model",
+          "label": "Delivery Model",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "lifecycle_status_application_provider",
+          "label": "Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "contained_application_providers",
+          "label": "Contained Application Providers",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "provides_application_services",
+          "label": "Provides Application Services",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "uses_information_representation",
+          "label": "Uses Information",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "ap_IT_owner",
+          "label": " IT Owner",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        },
+        {
+          "slot": "ap_IT_contact",
+          "label": "IT Contact",
+          "widget_type": "InstanceFieldWidget",
+          "order": 9
+        },
+        {
+          "slot": "known_app_issue",
+          "label": "Known Issues",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "ap_static_architecture",
+          "label": "Application Dependencies",
+          "widget_type": "InstanceFieldWidget",
+          "order": 11
+        },
+        {
+          "slot": "deployments_of_application_provider",
+          "label": "Physical Deployments",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "ap_interfaces",
+          "label": "Interfaces",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "provides_application_function_implementations",
+          "label": "Function Implementations",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "application_provider_purpose",
+          "label": "Application Provider Purpose",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "ap_codebase_status",
+          "label": "Codebase Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "ap_supplier",
+          "label": "Supplier",
+          "widget_type": "InstanceFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "required_technology_capabilities",
+          "label": "Required Technology Capabilities",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "implemented_with_technology",
+          "label": "Depends on Technology",
+          "widget_type": "InstanceFieldWidget",
+          "order": 19
+        },
+        {
+          "slot": "has_software_architecture",
+          "label": "High Level Software Architecture",
+          "widget_type": "InstanceFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "app_logical_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 27
+        },
+        {
+          "slot": "ap_business_owner",
+          "label": "Business Owner",
+          "widget_type": "InstanceFieldWidget",
+          "order": 28
+        },
+        {
+          "slot": "provides_application_service",
+          "label": "Provides Application Service",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "app_pro_supports_phys_proc",
+          "label": "Supported Business Processes",
+          "widget_type": "InstanceListWidget",
+          "order": 30
+        },
+        {
+          "slot": "operates_on_information_representation",
+          "label": "Operates On Information Representations",
+          "widget_type": "InstanceListWidget",
+          "order": 31
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 32
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 33
+        },
+        {
+          "slot": "ap_max_number_of_users",
+          "label": "Ap Max Number Of Users",
+          "widget_type": "IntegerFieldWidget",
+          "order": 34
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 35
+        },
+        {
+          "slot": "ap_site_access",
+          "label": "Ap Site Access",
+          "widget_type": "InstanceListWidget",
+          "order": 36
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 38
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 39
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 40
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 41
+        },
+        {
+          "slot": "afi_maps_info_data",
+          "label": "Afi Maps Info Data",
+          "widget_type": "InstanceListWidget",
+          "order": 43
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 44
+        },
+        {
+          "slot": "parent_application_provider",
+          "label": "Parent Application Provider",
+          "widget_type": "InstanceFieldWidget",
+          "order": 46
+        },
+        {
+          "slot": "type_of_application",
+          "label": "Type Of Application",
+          "widget_type": "InstanceListWidget",
+          "order": 47
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 48
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "Budgets For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 49
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "Impacting Change Activities",
+          "widget_type": "InstanceListWidget",
+          "order": 50
+        },
+        {
+          "slot": "distribute_costs",
+          "label": "Distribute Costs",
+          "widget_type": "CheckBoxWidget",
+          "order": 52
+        },
+        {
+          "slot": "ea_scope",
+          "label": "Ea Scope",
+          "widget_type": "InstanceListWidget",
+          "order": 53
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "Impacting Decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 54
+        },
+        {
+          "slot": "ap_business_criticality",
+          "label": "Ap Business Criticality",
+          "widget_type": "InstanceFieldWidget",
+          "order": 56
+        },
+        {
+          "slot": "ap_disposition_lifecycle_status",
+          "label": "Ap Disposition Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 57
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 58
+        },
+        {
+          "slot": "al_security_classifications",
+          "label": "al_security_classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 59
+        },
+        {
+          "slot": "al_managed_by_services",
+          "label": "al_managed_by_services",
+          "widget_type": "InstanceListWidget",
+          "order": 60
+        },
+        {
+          "slot": "ea_notes",
+          "label": "ea_notes",
+          "widget_type": "TextFieldWidget",
+          "order": 61
+        },
+        {
+          "slot": "ea_requirements",
+          "label": "ea_requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 63
+        },
+        {
+          "slot": "ea_reference",
+          "label": "ea_reference",
+          "widget_type": "TextFieldWidget",
+          "order": 64
+        },
+        {
+          "slot": "user_count_range",
+          "label": "user_count_range",
+          "widget_type": "InstanceFieldWidget",
+          "order": 65
+        },
+        {
+          "slot": "short_description",
+          "label": "short_description",
+          "widget_type": "TextFieldWidget",
+          "order": 66
+        },
+        {
+          "slot": "ap_data_object_requirements",
+          "label": "ap_data_object_requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 67
+        },
+        {
+          "slot": "ea_risks",
+          "label": "ea_risks",
+          "widget_type": "InstanceListWidget",
+          "order": 68
+        },
+        {
+          "slot": "apt_user_interaction_methods",
+          "label": "apt_user_interaction_methods",
+          "widget_type": "InstanceListWidget",
+          "order": 71
+        },
+        {
+          "slot": "ea_subject_to_regulations",
+          "label": "ea_subject_to_regulations",
+          "widget_type": "InstanceListWidget",
+          "order": 72
+        },
+        {
+          "slot": "ap_supports_multi_language",
+          "label": "ap_supports_multi_language",
+          "widget_type": "CheckBoxWidget",
+          "order": 73
+        },
+        {
+          "slot": "ea_adhoc_dependencies",
+          "label": "ea_adhoc_dependencies",
+          "widget_type": "InstanceListWidget",
+          "order": 75
+        },
+        {
+          "slot": "required_expertise",
+          "label": "required_expertise",
+          "widget_type": "InstanceListWidget",
+          "order": 76
+        },
+        {
+          "slot": "ap_disaster_recovery_failover_model",
+          "label": "ap_disaster_recovery_failover_model",
+          "widget_type": "InstanceFieldWidget",
+          "order": 77
+        },
+        {
+          "slot": "apt_customisation_level",
+          "label": "apt_customisation_level",
+          "widget_type": "InstanceFieldWidget",
+          "order": 78
+        },
+        {
+          "slot": "ea_assumptions",
+          "label": "ea_assumptions",
+          "widget_type": "InstanceListWidget",
+          "order": 79
+        },
+        {
+          "slot": "superseded_by_versions",
+          "label": "superseded_by_versions",
+          "widget_type": "InstanceListWidget",
+          "order": 80
+        },
+        {
+          "slot": "apt_pace_of_change_level",
+          "label": "apt_pace_of_change_level",
+          "widget_type": "InstanceFieldWidget",
+          "order": 81
+        },
+        {
+          "slot": "ea_business_continuity_profile",
+          "label": "ea_business_continuity_profile",
+          "widget_type": "InstanceFieldWidget",
+          "order": 82
+        },
+        {
+          "slot": "ea_diagrams",
+          "label": "ea_diagrams",
+          "widget_type": "InstanceListWidget",
+          "order": 83
+        },
+        {
+          "slot": "supersedes_versions",
+          "label": "supersedes_versions",
+          "widget_type": "InstanceListWidget",
+          "order": 84
+        },
+        {
+          "slot": "ea_recovery_point_objective",
+          "label": "ea_recovery_point_objective",
+          "widget_type": "InstanceFieldWidget",
+          "order": 85
+        },
+        {
+          "slot": "ea_recovery_time_objective",
+          "label": "ea_recovery_time_objective",
+          "widget_type": "InstanceFieldWidget",
+          "order": 86
+        },
+        {
+          "slot": "ea_innovation_opportunity_spaces",
+          "label": "ea_innovation_opportunity_spaces",
+          "widget_type": "InstanceListWidget",
+          "order": 87
+        },
+        {
+          "slot": "ea_security_profile",
+          "label": "ea_security_profile",
+          "widget_type": "InstanceFieldWidget",
+          "order": 89
+        },
+        {
+          "slot": "ea_subject_of_roadmap",
+          "label": "ea_subject_of_roadmap",
+          "widget_type": "InstanceFieldWidget",
+          "order": 90
+        },
+        {
+          "slot": "ea_principle_compliance_assessments",
+          "label": "ea_principle_compliance_assessments",
+          "widget_type": "InstanceListWidget",
+          "order": 91
+        },
+        {
+          "slot": "target_performance_measures",
+          "label": "target_performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 92
+        },
+        {
+          "slot": "it_ownership_status",
+          "label": "it_ownership_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 93
+        },
+        {
+          "slot": "purchase_status",
+          "label": "purchase_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 94
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 42
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 45
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "System Last Modified Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 51
+        },
+        {
+          "slot": "system_is_published",
+          "label": "system_is_published",
+          "widget_type": "CheckBoxWidget",
+          "order": 55
+        },
+        {
+          "slot": "system_content_quality_status",
+          "label": "system_content_quality_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 62
+        },
+        {
+          "slot": "system_content_quality_last_reviewed_datetime_iso8601",
+          "label": "system_content_quality_last_reviewed_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 69
+        },
+        {
+          "slot": "system_content_quality_last_reviewer_id",
+          "label": "system_content_quality_last_reviewer_id",
+          "widget_type": "TextFieldWidget",
+          "order": 70
+        },
+        {
+          "slot": "system_ea_reference_instance_counter",
+          "label": "system_ea_reference_instance_counter",
+          "widget_type": "IntegerFieldWidget",
+          "order": 74
+        },
+        {
+          "slot": "system_content_quality_reviews",
+          "label": "system_content_quality_reviews",
+          "widget_type": "InstanceListWidget",
+          "order": 88
+        }
+      ]
+    }
+  ]
+}

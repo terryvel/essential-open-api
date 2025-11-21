@@ -1,0 +1,210 @@
+{
+  "Widget_Style_Class": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "enumeration_value",
+          "label": "Enumeration Value",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "enumeration_sequence_number",
+          "label": "Enumeration Sequence Number",
+          "widget_type": "IntegerFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "enumeration_score",
+          "label": "Relative Score (1 - 10",
+          "widget_type": "IntegerFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "enumeration_icon",
+          "label": "Enumeration Icon",
+          "widget_type": "TextFieldWidget",
+          "order": 6
+        },
+        {
+          "slot": "enumeration_report_commentary",
+          "label": "Enumeration Report Commentary",
+          "widget_type": "TextFieldWidget",
+          "order": 7
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "Element Styling Classes",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 18
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 23
+        },
+        {
+          "slot": "costs_for_element",
+          "label": "Costs For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 24
+        },
+        {
+          "slot": "revenues_for_element",
+          "label": "Revenues For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "System Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 26
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "System Content Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 27
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "System Creation Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 28
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "System Last Modified Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 29
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "System Content Visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 30
+        }
+      ]
+    }
+  ]
+}

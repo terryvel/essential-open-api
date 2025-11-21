@@ -1,0 +1,110 @@
+{
+  "Service_Quality_Value_Map_Score": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "sqvms_parent_map",
+          "label": "Mapping Matrix",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "sqvms_x_value",
+          "label": "X Axis Value",
+          "widget_type": "InstanceFieldWidget",
+          "order": 2
+        },
+        {
+          "slot": "sqvms_y_value",
+          "label": "Y Axis Value",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "sqvms_z_value",
+          "label": "Z Axis Value",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "sqvms_map_score",
+          "label": "Mapping Score",
+          "widget_type": "FloatFieldWidget",
+          "order": 5
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 6
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 9
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "element_styling_classes",
+          "label": "element_styling_classes",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        }
+      ]
+    }
+  ]
+}

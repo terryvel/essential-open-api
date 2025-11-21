@@ -1,0 +1,98 @@
+{
+  "Time_Based_Conceptual_Business_Event": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "related_information_concept",
+          "label": "Related Information Concepts",
+          "widget_type": "InstanceListWidget",
+          "order": 3
+        },
+        {
+          "slot": "raising_conceptual_event_time_basis",
+          "label": "Raising Conceptual Event Time Basis",
+          "widget_type": "TextFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "implemented_by_business_events",
+          "label": "Implemented by Business Events",
+          "widget_type": "InstanceListWidget",
+          "order": 5
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "bus_conceptual_contained_in_arch_states",
+          "label": "Contained In Architecture States",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "lifecycle_model_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "performance_measures",
+          "label": "performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        }
+      ]
+    }
+  ]
+}

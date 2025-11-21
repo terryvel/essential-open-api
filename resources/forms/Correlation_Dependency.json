@@ -1,0 +1,180 @@
+{
+  "Correlation_Dependency": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "dependency_to_element",
+          "label": "Dependency To Element",
+          "widget_type": "InstanceFieldWidget",
+          "order": 1
+        },
+        {
+          "slot": "correlation_dependency_correlations",
+          "label": "Correlation Dependency Correlations",
+          "widget_type": "InstanceListWidget",
+          "order": 2
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 3
+        },
+        {
+          "slot": "name",
+          "label": "Full Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 4
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "Lifecycle Model For Element",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "performance_measures",
+          "label": "Performance Measures",
+          "widget_type": "InstanceListWidget",
+          "order": 12
+        },
+        {
+          "slot": "coord_x",
+          "label": "Coord X",
+          "widget_type": "IntegerFieldWidget",
+          "order": 13
+        },
+        {
+          "slot": "coord_y",
+          "label": "Coord Y",
+          "widget_type": "IntegerFieldWidget",
+          "order": 14
+        },
+        {
+          "slot": "scale_x",
+          "label": "Scale X",
+          "widget_type": "FloatFieldWidget",
+          "order": 17
+        },
+        {
+          "slot": "scale_y",
+          "label": "Scale Y",
+          "widget_type": "FloatFieldWidget",
+          "order": 18
+        },
+        {
+          "slot": "commentary",
+          "label": "Commentary",
+          "widget_type": "InstanceListWidget",
+          "order": 19
+        },
+        {
+          "slot": "short_name",
+          "label": "Short Name",
+          "widget_type": "TextFieldWidget",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "group": "security",
+      "items": [
+        {
+          "slot": "system_security_edit_classification",
+          "label": "System Security Edit Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 15
+        },
+        {
+          "slot": "system_security_read_classification",
+          "label": "System Security Read Classification",
+          "widget_type": "InstanceListWidget",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_author_id",
+          "label": "System Author Id",
+          "widget_type": "TextFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "system_content_lifecycle_status",
+          "label": "System Content Lifecycle Status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 21
+        },
+        {
+          "slot": "system_creation_datetime_iso8601",
+          "label": "System Creation Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 22
+        },
+        {
+          "slot": "system_content_visibility",
+          "label": "System Content Visibility",
+          "widget_type": "InstanceFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "system_last_modified_datetime_iso8601",
+          "label": "System Last Modified Datetime Iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 24
+        },
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "system_last_modified_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 26
+        }
+      ]
+    }
+  ]
+}

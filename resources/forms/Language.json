@@ -1,0 +1,98 @@
+{
+  "Language": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Language Code",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "lang_display_label",
+          "label": "Display Label",
+          "widget_type": "AutoTextWidget",
+          "order": 2
+        },
+        {
+          "slot": "lang_english_name",
+          "label": "Name (English",
+          "widget_type": "TextFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "lang_native_name",
+          "label": "Name (Native",
+          "widget_type": "TextFieldWidget",
+          "order": 4
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 5
+        },
+        {
+          "slot": "right_to_left_text",
+          "label": "Right To Left Text?",
+          "widget_type": "CheckBoxWidget",
+          "order": 6
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "performance_measures",
+          "label": "performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "lifecycle_model_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        }
+      ]
+    }
+  ]
+}

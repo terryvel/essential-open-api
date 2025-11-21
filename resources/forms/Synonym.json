@@ -1,0 +1,265 @@
+{
+  "Synonym": [
+    {
+      "group": "principal",
+      "items": [
+        {
+          "slot": "name",
+          "label": "Name",
+          "widget_type": "UniqueStringWidget",
+          "order": 1
+        },
+        {
+          "slot": "description",
+          "label": "Description",
+          "widget_type": "TextAreaWidget",
+          "order": 2
+        },
+        {
+          "slot": "synonym_language",
+          "label": "Synonym Language",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
+        {
+          "slot": "element_classified_by",
+          "label": "Classified As",
+          "widget_type": "InstanceListWidget",
+          "order": 4
+        },
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "group": "extra",
+      "items": [
+        {
+          "slot": "synonyms",
+          "label": "Synonyms",
+          "widget_type": "InstanceListWidget",
+          "order": 6
+        },
+        {
+          "slot": "external_reference_links",
+          "label": "External Reference Links",
+          "widget_type": "InstanceListWidget",
+          "order": 7
+        },
+        {
+          "slot": "external_repository_instance_reference",
+          "label": "External Repository Instance Reference",
+          "widget_type": "InstanceListWidget",
+          "order": 8
+        },
+        {
+          "slot": "stakeholders",
+          "label": "Stakeholders",
+          "widget_type": "InstanceListWidget",
+          "order": 9
+        },
+        {
+          "slot": "lifecycle_model_for_element",
+          "label": "lifecycle_model_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 10
+        },
+        {
+          "slot": "performance_measures",
+          "label": "performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 11
+        },
+        {
+          "slot": "ea_notes",
+          "label": "ea_notes",
+          "widget_type": "TextFieldWidget",
+          "order": 12
+        },
+        {
+          "slot": "ea_assumptions",
+          "label": "ea_assumptions",
+          "widget_type": "InstanceListWidget",
+          "order": 13
+        },
+        {
+          "slot": "impacting_change_activities",
+          "label": "impacting_change_activities",
+          "widget_type": "InstanceListWidget",
+          "order": 14
+        },
+        {
+          "slot": "ea_reference",
+          "label": "ea_reference",
+          "widget_type": "TextFieldWidget",
+          "order": 15
+        },
+        {
+          "slot": "short_description",
+          "label": "short_description",
+          "widget_type": "TextFieldWidget",
+          "order": 16
+        },
+        {
+          "slot": "ea_diagrams",
+          "label": "ea_diagrams",
+          "widget_type": "InstanceListWidget",
+          "order": 17
+        },
+        {
+          "slot": "impacting_decisions",
+          "label": "impacting_decisions",
+          "widget_type": "InstanceListWidget",
+          "order": 18
+        },
+        {
+          "slot": "short_name",
+          "label": "short_name",
+          "widget_type": "TextFieldWidget",
+          "order": 19
+        },
+        {
+          "slot": "ea_innovation_opportunity_spaces",
+          "label": "ea_innovation_opportunity_spaces",
+          "widget_type": "InstanceListWidget",
+          "order": 21
+        },
+        {
+          "slot": "sl_security_classifications",
+          "label": "sl_security_classifications",
+          "widget_type": "InstanceListWidget",
+          "order": 22
+        },
+        {
+          "slot": "ea_principle_compliance_assessments",
+          "label": "ea_principle_compliance_assessments",
+          "widget_type": "InstanceListWidget",
+          "order": 25
+        },
+        {
+          "slot": "superseded_by_versions",
+          "label": "superseded_by_versions",
+          "widget_type": "InstanceListWidget",
+          "order": 26
+        },
+        {
+          "slot": "ea_requirements",
+          "label": "ea_requirements",
+          "widget_type": "InstanceListWidget",
+          "order": 29
+        },
+        {
+          "slot": "supersedes_versions",
+          "label": "supersedes_versions",
+          "widget_type": "InstanceListWidget",
+          "order": 30
+        },
+        {
+          "slot": "ea_business_continuity_profile",
+          "label": "ea_business_continuity_profile",
+          "widget_type": "InstanceFieldWidget",
+          "order": 31
+        },
+        {
+          "slot": "ea_security_profile",
+          "label": "ea_security_profile",
+          "widget_type": "InstanceFieldWidget",
+          "order": 32
+        },
+        {
+          "slot": "ea_risks",
+          "label": "ea_risks",
+          "widget_type": "InstanceListWidget",
+          "order": 33
+        },
+        {
+          "slot": "ea_subject_of_roadmap",
+          "label": "ea_subject_of_roadmap",
+          "widget_type": "InstanceFieldWidget",
+          "order": 35
+        },
+        {
+          "slot": "ea_scope",
+          "label": "ea_scope",
+          "widget_type": "InstanceListWidget",
+          "order": 37
+        },
+        {
+          "slot": "target_performance_measures",
+          "label": "target_performance_measures",
+          "widget_type": "InstanceListWidget",
+          "order": 38
+        },
+        {
+          "slot": "budgets_for_element",
+          "label": "budgets_for_element",
+          "widget_type": "InstanceListWidget",
+          "order": 39
+        },
+        {
+          "slot": "ea_subject_to_regulations",
+          "label": "ea_subject_to_regulations",
+          "widget_type": "InstanceListWidget",
+          "order": 40
+        },
+        {
+          "slot": "ea_adhoc_dependencies",
+          "label": "ea_adhoc_dependencies",
+          "widget_type": "InstanceListWidget",
+          "order": 41
+        }
+      ]
+    },
+    {
+      "group": "system",
+      "items": [
+        {
+          "slot": "system_content_quality_last_reviewed_datetime_iso8601",
+          "label": "system_content_quality_last_reviewed_datetime_iso8601",
+          "widget_type": "TextFieldWidget",
+          "order": 20
+        },
+        {
+          "slot": "system_content_quality_last_reviewer_id",
+          "label": "system_content_quality_last_reviewer_id",
+          "widget_type": "TextFieldWidget",
+          "order": 23
+        },
+        {
+          "slot": "system_last_modified_author_id",
+          "label": "system_last_modified_author_id",
+          "widget_type": "TextFieldWidget",
+          "order": 24
+        },
+        {
+          "slot": "system_is_published",
+          "label": "system_is_published",
+          "widget_type": "CheckBoxWidget",
+          "order": 27
+        },
+        {
+          "slot": "system_ea_reference_instance_counter",
+          "label": "system_ea_reference_instance_counter",
+          "widget_type": "IntegerFieldWidget",
+          "order": 28
+        },
+        {
+          "slot": "system_content_quality_reviews",
+          "label": "system_content_quality_reviews",
+          "widget_type": "InstanceListWidget",
+          "order": 34
+        },
+        {
+          "slot": "system_content_quality_status",
+          "label": "system_content_quality_status",
+          "widget_type": "InstanceFieldWidget",
+          "order": 36
+        }
+      ]
+    }
+  ]
+}
