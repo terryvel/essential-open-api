@@ -1164,6 +1164,35 @@ def update_instance(instance_id: str):
     )
 
 
+@api_bp.delete("/instances/<string:instance_id>")
+def delete_instance_route(instance_id: str):
+    """Delete an instance from the Protégé knowledge base."""
+    kb = get_knowledge_base()
+    if kb is None:
+        return jsonify({"error": "Knowledge Base not loaded!"}), 500
+
+    inst = kb.getInstance(instance_id)
+    if inst is None:
+        return jsonify({"error": f"Instance '{instance_id}' not found."}), 404
+
+    try:
+        payload = get_id_name_class(inst)
+    except Exception:
+        payload = {"id": instance_id}
+
+    if not delete_instance(kb, inst):
+        return jsonify({"error": f"Failed to delete instance '{instance_id}'."}), 500
+
+    success, save_errors = save_project()
+    if not success:
+        error_body = {"error": "Failed to persist Protégé project after deletion."}
+        if save_errors:
+            error_body["details"] = save_errors
+        return jsonify(error_body), 500
+
+    return jsonify({"message": "Instance deleted successfully.", "instance": payload})
+
+
 @api_bp.get("/instances/<string:instance_id>")
 def get_instance(instance_id: str):
     """Return details for a specific instance."""
