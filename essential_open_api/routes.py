@@ -132,17 +132,36 @@ def list_root_classes():
             subclass_count = int(cls.getDirectSubclassCount())
         except Exception:
             subclass_count = 0
+        try:
+            abstract_flag = bool(cls.isAbstract())
+        except Exception:
+            abstract_flag = False
 
         root_classes.append(
             {
                 "id": str(cls.getName()),
                 "title": title,
                 "hasChildren": bool(subclass_count),
-                "count": len(cls.getDirectInstances())
+                "count": len(cls.getDirectInstances()),
+                "isAbstract": abstract_flag,
             }
         )
 
-    return jsonify(root_classes)
+    try:
+        root_cls = getattr(kb, "getRootCls", lambda: None)() or kb.getCls(":THING")
+    except Exception:
+        root_cls = None
+    current_name = str(root_cls.getName()) if root_cls else ""
+    try:
+        current_is_abstract = bool(root_cls.isAbstract()) if root_cls else False
+    except Exception:
+        current_is_abstract = False
+    try:
+        current_count = len(root_cls.getDirectInstances()) if root_cls else 0
+    except Exception:
+        current_count = 0
+
+    return jsonify({"class": current_name, "isAbstract": current_is_abstract, "count": current_count, "classes": root_classes})
 
 
 @api_bp.get("/classes/<string:class_name>/")
@@ -171,16 +190,35 @@ def list_child_classes(class_name: str):
             subclass_count = int(subcls.getDirectSubclassCount())
         except Exception:
             subclass_count = 0
+        try:
+            abstract_flag = bool(subcls.isAbstract())
+        except Exception:
+            abstract_flag = False
         children.append(
             {
                 "id": str(subcls.getName()),
                 "title": title,
                 "hasChildren": bool(subclass_count),
-                "count": len(subcls.getDirectInstances())
+                "count": len(subcls.getDirectInstances()),
+                "isAbstract": abstract_flag,
             }
         )
 
-    return jsonify(children)
+    try:
+        current_cls = kb.getCls(class_name)
+    except Exception:
+        current_cls = None
+    current_name = str(current_cls.getName()) if current_cls else class_name
+    try:
+        current_is_abstract = bool(current_cls.isAbstract()) if current_cls else False
+    except Exception:
+        current_is_abstract = False
+    try:
+        current_count = len(current_cls.getDirectInstances()) if current_cls else 0
+    except Exception:
+        current_count = 0
+
+    return jsonify({"class": current_name, "isAbstract": current_is_abstract, "count": current_count, "classes": children})
 
 @api_bp.get("/classes/<string:class_name>/form")
 def get_class_form(class_name: str):
@@ -189,7 +227,13 @@ def get_class_form(class_name: str):
     form_path = forms_dir / f"{class_name}.json"
 
     if not form_path.exists():
-        return jsonify({"error": f"Form for class '{class_name}' not found."}), 404
+        fallback = [
+            {"group": "principal", "items": []},
+            {"group": "extra", "items": []},
+            {"group": "security", "items": []},
+            {"group": "system", "items": []},
+        ]
+        return jsonify({class_name: fallback})
 
     try:
         data = json.loads(form_path.read_text(encoding="utf-8"))
@@ -262,6 +306,15 @@ def list_class_slots(class_name: str):
                 "type": value_type,
                 "min_cardinality": min_cardinality,
                 "max_cardinality": max_cardinality,
+                **(
+                    {
+                        "allowed_classes": [
+                            str(c.getName()) for c in (slot.getAllowedClses() or []) if c
+                        ]
+                    }
+                    if value_type.lower() == "instance"
+                    else {}
+                ),
             }
         )
 
@@ -599,12 +652,13 @@ def rollback_instances(kb, instances: List[object]) -> None:
             continue
 
 
-def persist_or_rollback(kb, created_frames: List[object]) -> bool:
+def persist_or_rollback(kb, created_frames: List[object]):
     """Persist the project, rolling back new instances on failure."""
-    if save_project():
-        return True
+    success, save_errors = save_project()
+    if success:
+        return True, None
     rollback_instances(kb, created_frames)
-    return False
+    return False, save_errors
 
 
 def serialize_instance(instance, description: Optional[str], external_summary: Optional[dict]):
@@ -746,8 +800,12 @@ def create_instance():
         created.external_summary,
     )
 
-    if not persist_or_rollback(kb, created_frames):
-        return jsonify({"error": "Failed to persist Protégé project."}), 500
+    persisted, save_errors = persist_or_rollback(kb, created_frames)
+    if not persisted:
+        error_body = {"error": "Failed to persist Protégé project."}
+        if save_errors:
+            error_body["details"] = save_errors
+        return jsonify(error_body), 500
 
     return (
         jsonify(
@@ -800,8 +858,12 @@ def create_instances_batch():
         rollback_instances(kb, created_frames)
         return jsonify({"error": f"Unexpected error: {exc}"}), 500
 
-    if not persist_or_rollback(kb, created_frames):
-        return jsonify({"error": "Failed to persist Protégé project."}), 500
+    persisted, save_errors = persist_or_rollback(kb, created_frames)
+    if not persisted:
+        error_body = {"error": "Failed to persist Protégé project."}
+        if save_errors:
+            error_body["details"] = save_errors
+        return jsonify(error_body), 500
 
     return (
         jsonify(
@@ -825,7 +887,7 @@ def get_instance(instance_id: str):
     if inst is None:
         return jsonify({"error": f"Instance '{instance_id}' not found."}), 404
 
-    raw_slots = request.args.get("slots", "name^description").strip()
+    raw_slots = request.args.get("slots", "").strip()
     allowed = None
     if raw_slots:
         allowed_list = [s.strip() for s in raw_slots.split("^") if s.strip()]
@@ -836,10 +898,14 @@ def get_instance(instance_id: str):
     except Exception:
         max_depth = MAX_DEPTH_DEFAULT
 
-    if max_depth < 0:
-        max_depth = 0
-    if max_depth > 10:
-        max_depth = 10
+    if max_depth < 1:
+        max_depth = MAX_DEPTH_DEFAULT
+
+    if max_depth > 3 and not allowed:
+        return jsonify({
+            "error": "Specific slots must be requested if the maximum depth is greater than 3.",
+            "hint": "Use ?slots=slotA^slotB^slotC"
+        }), 400
 
     data = frame_to_dict(inst, allowed=allowed, max_depth=max_depth)
     return jsonify({"instance": data, "maxDepthUsed": max_depth})

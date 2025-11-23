@@ -98,12 +98,16 @@ def get_publish_status(job_id: str) -> Optional[Tuple[str, str]]:
         return None
 
 
-def save_project() -> bool:
-    """Persist the current Protégé project to disk."""
+def save_project():
+    """Persist the current Protégé project to disk.
+
+    Returns:
+        tuple[bool, Optional[list[str]]]: (success flag, error messages if any).
+    """
     project = get_project()
     if project is None:
         print("Cannot save project: Protégé project not loaded.")
-        return False
+        return False, ["Protégé project not loaded."]
 
     try:
         start_jvm()
@@ -119,15 +123,15 @@ def save_project() -> bool:
                 legacy_save()
             else:
                 print("Project object does not expose a save/saveProject method.")
-                return False
+                return False, ["Project object does not expose a save/saveProject method."]
 
         if hasattr(errors, "isEmpty") and not errors.isEmpty():
             error_messages = [str(err) for err in errors]
             print(f"Errors while saving project: {error_messages}")
-            return False
+            return False, error_messages
 
         print("Protégé project saved successfully.")
-        return True
+        return True, None
     except Exception as exc:  # pylint: disable=broad-except
         print(f"Error while saving project: {exc}")
-        return False
+        return False, [f"Error while saving project: {exc}"]
