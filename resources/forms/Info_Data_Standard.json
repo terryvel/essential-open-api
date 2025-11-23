@@ -92,18 +92,18 @@
           "label": "Info/Data Standard Reference Implementations",
           "widget_type": "InstanceListWidget",
           "order": 15
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 16
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 16
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

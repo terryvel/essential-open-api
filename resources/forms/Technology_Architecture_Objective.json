@@ -80,18 +80,18 @@
           "label": "Target Date (DEPRECATED",
           "widget_type": "InstanceFieldWidget",
           "order": 13
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 14
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 14
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

@@ -56,18 +56,18 @@
           "label": "Attributes of this Instance",
           "widget_type": "InstanceListWidget",
           "order": 9
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 10
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 10
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

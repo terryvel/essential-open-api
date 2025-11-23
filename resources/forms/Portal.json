@@ -68,18 +68,18 @@
           "label": "Portal Sections",
           "widget_type": "InstanceListWidget",
           "order": 11
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 12
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

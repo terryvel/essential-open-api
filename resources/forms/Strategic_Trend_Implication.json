@@ -110,18 +110,18 @@
           "label": "External Reference Links",
           "widget_type": "InstanceListWidget",
           "order": 18
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 19
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 19
+        },
         {
           "slot": "synonyms",
           "label": "Synonyms",

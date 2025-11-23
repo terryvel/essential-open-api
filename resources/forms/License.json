@@ -68,18 +68,18 @@
           "label": "License Details",
           "widget_type": "TextAreaWidget",
           "order": 11
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 12
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        },
         {
           "slot": "stakeholders",
           "label": "Stakeholders",

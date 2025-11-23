@@ -98,18 +98,18 @@
           "label": "Supporting Application Functions",
           "widget_type": "InstanceListWidget",
           "order": 16
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 17
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 17
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

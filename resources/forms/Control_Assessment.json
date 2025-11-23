@@ -104,18 +104,18 @@
           "label": "Remediation Completion Date (YYYY-MM-DD",
           "widget_type": "TextFieldWidget",
           "order": 17
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 18
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 18
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

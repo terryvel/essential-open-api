@@ -136,9 +136,9 @@ def classify_groups(fields: List[dict]) -> List[dict]:
     base_slots = []
     if has_supersedes:
         for f in fields:
-            base_slots.append(f.get("slot"))
             if f.get("slot") == "supersedes_version":
                 break
+            base_slots.append(f.get("slot"))
     else:
         base_slots = ["name", "description"]
 

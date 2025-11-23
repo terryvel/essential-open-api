@@ -26,18 +26,18 @@
           "label": "Full Name",
           "widget_type": "UniqueStringWidget",
           "order": 4
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 5
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 5
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

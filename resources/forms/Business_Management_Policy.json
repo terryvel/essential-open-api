@@ -38,18 +38,18 @@
           "label": "Responsible Roles",
           "widget_type": "InstanceListWidget",
           "order": 6
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 7
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 7
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

@@ -68,18 +68,18 @@
           "label": "External Reference Links",
           "widget_type": "InstanceListWidget",
           "order": 11
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 12
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 12
+        },
         {
           "slot": "performance_measures",
           "label": "performance_measures",

@@ -56,18 +56,18 @@
           "label": "Term Icon / Class",
           "widget_type": "TextFieldWidget",
           "order": 9
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 10
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 10
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

@@ -32,18 +32,18 @@
           "label": "Attribute Of Technology Instances",
           "widget_type": "InstanceListWidget",
           "order": 5
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 6
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 6
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

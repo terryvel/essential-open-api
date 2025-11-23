@@ -128,18 +128,18 @@
           "label": "High Level Software Architecture",
           "widget_type": "InstanceFieldWidget",
           "order": 21
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 22
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 22
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

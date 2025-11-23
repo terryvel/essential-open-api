@@ -50,18 +50,18 @@
           "label": "Deployment of Hardware Technology",
           "widget_type": "InstanceListWidget",
           "order": 8
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 9
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 9
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

@@ -92,18 +92,18 @@
           "label": "Required Business Capabilities",
           "widget_type": "InstanceListWidget",
           "order": 15
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 16
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 16
+        },
         {
           "slot": "external_repository_instance_reference",
           "label": "External Repository Instance Reference",

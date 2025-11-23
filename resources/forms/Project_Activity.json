@@ -116,18 +116,18 @@
           "label": "Stakeholders",
           "widget_type": "InstanceListWidget",
           "order": 19
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 20
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 20
+        },
         {
           "slot": "synonyms",
           "label": "Synonyms",

@@ -14,18 +14,18 @@
           "label": "Description",
           "widget_type": "TextAreaWidget",
           "order": 2
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 3
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 3
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",

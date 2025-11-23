@@ -20,18 +20,18 @@
           "label": "Security Classifications",
           "widget_type": "InstanceListWidget",
           "order": 3
-        },
-        {
-          "slot": "supersedes_version",
-          "label": "Superseded Version",
-          "widget_type": "InstanceFieldWidget",
-          "order": 4
         }
       ]
     },
     {
       "group": "extra",
       "items": [
+        {
+          "slot": "supersedes_version",
+          "label": "Superseded Version",
+          "widget_type": "InstanceFieldWidget",
+          "order": 4
+        },
         {
           "slot": "element_classified_by",
           "label": "Classified As",
