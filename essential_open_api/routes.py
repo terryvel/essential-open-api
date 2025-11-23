@@ -31,6 +31,14 @@ class InstanceCreationError(Exception):
         self.status_code = status_code
 
 
+class InstanceUpdateError(Exception):
+    """Custom exception to propagate update errors with HTTP status codes."""
+
+    def __init__(self, message: str, status_code: int = 400):
+        super().__init__(message)
+        self.status_code = status_code
+
+
 @dataclass
 class CreatedInstance:
     """Container for instance metadata returned by creation helpers."""
@@ -399,6 +407,67 @@ def resolve_slot(obj, kb=None):
     return get_slot(target_kb, obj)
 
 
+def snapshot_slot_values(inst, slot):
+    """Return a copy of slot values for later restoration."""
+    slot_obj = resolve_slot(slot, inst.getKnowledgeBase())
+    if slot_obj is None:
+        return []
+    try:
+        values = inst.getOwnSlotValues(slot_obj) or []
+    except Exception:
+        return []
+    return list(values)
+
+
+def clear_slot_values(inst, slot) -> bool:
+    """Remove all values from a slot."""
+    slot_obj = resolve_slot(slot, inst.getKnowledgeBase())
+    if slot_obj is None:
+        return True
+    try:
+        inst.setOwnSlotValues(slot_obj, [])
+        return True
+    except Exception:
+        pass
+
+    try:
+        existing = inst.getOwnSlotValues(slot_obj) or []
+    except Exception:
+        existing = []
+
+    success = True
+    for val in list(existing):
+        try:
+            inst.removeOwnSlotValue(slot_obj, val)
+        except Exception:
+            success = False
+    return success
+
+
+def restore_slot_values(inst, slot, values) -> bool:
+    """Restore slot values from a previous snapshot."""
+    slot_obj = resolve_slot(slot, inst.getKnowledgeBase())
+    if slot_obj is None:
+        return True
+    if not clear_slot_values(inst, slot_obj):
+        return False
+    if not values:
+        return True
+    try:
+        inst.setOwnSlotValues(slot_obj, values)
+        return True
+    except Exception:
+        pass
+
+    success = True
+    for val in values:
+        try:
+            inst.addOwnSlotValue(slot_obj, val)
+        except Exception:
+            success = False
+    return success
+
+
 def set_slot_value(inst, slot, value) -> bool:
     """Set the value of a slot if both slot and value exist."""
     if value is None:
@@ -652,6 +721,14 @@ def rollback_instances(kb, instances: List[object]) -> None:
             continue
 
 
+def ensure_slot_snapshot(kb, inst, slot_name: str, touched_slots: dict) -> None:
+    """Store the original values for a slot once."""
+    if slot_name in touched_slots:
+        return
+    slot_obj = get_slot(kb, slot_name)
+    touched_slots[slot_name] = (slot_obj, snapshot_slot_values(inst, slot_obj))
+
+
 def persist_or_rollback(kb, created_frames: List[object]):
     """Persist the project, rolling back new instances on failure."""
     success, save_errors = save_project()
@@ -659,6 +736,20 @@ def persist_or_rollback(kb, created_frames: List[object]):
         return True, None
     rollback_instances(kb, created_frames)
     return False, save_errors
+
+
+def revert_instance_changes(inst, touched_slots: dict, original_name: Optional[str], revert_name: bool) -> None:
+    """Restore previously snapped slot values and optionally the name."""
+    for slot_name, (slot_obj, values) in touched_slots.items():
+        try:
+            restore_slot_values(inst, slot_obj, values)
+        except Exception:
+            continue
+    if revert_name and original_name:
+        try:
+            set_instance_name(inst, original_name)
+        except Exception:
+            pass
 
 
 def serialize_instance(instance, description: Optional[str], external_summary: Optional[dict]):
@@ -773,6 +864,143 @@ def create_instance_from_payload(kb, payload: dict, created_frames: List[object]
     return CreatedInstance(instance=instance, description=description, external_summary=external_summary)
 
 
+def update_instance_from_payload(kb, instance, payload: dict, created_frames: List[object], touched_slots: dict):
+    """Update an existing instance with provided payload."""
+    if not isinstance(payload, dict):
+        raise InstanceUpdateError("Instance payload must be an object.", 400)
+
+    class_name = str(payload.get("className", "")).strip()
+    if not class_name:
+        raise InstanceUpdateError("Field 'className' is required.", 400)
+
+    try:
+        current_type = instance.getDirectType()
+        current_class_name = str(current_type.getName()) if current_type else ""
+    except Exception:
+        current_class_name = ""
+
+    if current_class_name and class_name != current_class_name:
+        raise InstanceUpdateError(
+            f"Payload className '{class_name}' does not match instance class '{current_class_name}'.",
+            409,
+        )
+
+    name_updated = False
+    if "name" in payload:
+        new_name = str(payload.get("name", "")).strip()
+        if not new_name:
+            raise InstanceUpdateError("Field 'name' cannot be empty when provided.", 400)
+        if current_type:
+            existing = find_instance_by_slot_value(current_type, "name_", new_name)
+            try:
+                is_same = existing and str(existing.getName()) == str(instance.getName())
+            except Exception:
+                is_same = False
+            if existing is not None and not is_same:
+                raise InstanceUpdateError(f"Instance with name '{new_name}' already exists.", 409)
+        if not set_instance_name(instance, new_name):
+            raise InstanceUpdateError("Failed to update instance name.", 500)
+        name_updated = True
+
+    description_for_response = None
+    if "description" in payload:
+        raw_description = payload.get("description")
+        description_for_response = None if raw_description is None else str(raw_description)
+        ensure_slot_snapshot(kb, instance, "description", touched_slots)
+        if raw_description is None:
+            if not clear_slot_values(instance, "description"):
+                raise InstanceUpdateError("Failed to clear description.", 500)
+        else:
+            if not set_slot_value(instance, "description", str(raw_description)):
+                raise InstanceUpdateError("Failed to update description.", 500)
+
+    external_summary = None
+    if "externalId" in payload:
+        external_payload = payload.get("externalId")
+        try:
+            external_id = validate_external_id(external_payload) if external_payload is not None else None
+        except ValueError as exc:
+            raise InstanceUpdateError(str(exc), 400) from exc
+
+        if external_id:
+            repo_instance, repo_err = ensure_external_repository(kb, external_id["sourceName"])
+            if repo_err:
+                raise InstanceUpdateError(repo_err, 500)
+
+            _, ref_err = create_external_reference_record(
+                kb,
+                instance,
+                repo_instance,
+                external_id["id"],
+                external_id["sourceName"],
+            )
+            if ref_err:
+                raise InstanceUpdateError(ref_err, 500)
+            external_summary = external_id
+
+    for slot_name, value in payload.items():
+        if slot_name in RESERVED_FIELDS:
+            continue
+
+        slot = get_slot(kb, slot_name)
+        if slot is None:
+            raise InstanceUpdateError(
+                f"Slot '{slot_name}' not found for class '{class_name}'.",
+                400,
+            )
+
+        values = value if isinstance(value, list) else [value]
+        allows_multi = slot_allows_multiple(slot)
+        if not allows_multi and len(values) > 1:
+            raise InstanceUpdateError(
+                f"Slot '{slot_name}' does not allow multiple values.",
+                400,
+            )
+
+        ensure_slot_snapshot(kb, instance, slot_name, touched_slots)
+
+        if value is None or (isinstance(value, list) and not value):
+            if not clear_slot_values(instance, slot):
+                raise InstanceUpdateError(f"Failed to clear slot '{slot_name}'.", 500)
+            continue
+
+        prepared_values = []
+        for entry in values:
+            if entry is None:
+                continue
+            if isinstance(entry, dict):
+                if "className" not in entry:
+                    raise InstanceUpdateError("Field 'className' is required for nested objects.", 400)
+                try:
+                    nested = create_instance_from_payload(kb, entry, created_frames)
+                except InstanceCreationError as exc:
+                    raise InstanceUpdateError(str(exc), exc.status_code) from exc
+                prepared_values.append(nested.instance)
+            else:
+                prepared_values.append(entry)
+
+        if allows_multi:
+            if not clear_slot_values(instance, slot):
+                raise InstanceUpdateError(f"Failed to update slot '{slot_name}'.", 500)
+            for entry in prepared_values:
+                if not add_slot_value(instance, slot, entry):
+                    raise InstanceUpdateError(
+                        f"Failed to set slot '{slot_name}'.",
+                        500,
+                    )
+        else:
+            if not prepared_values:
+                if not clear_slot_values(instance, slot):
+                    raise InstanceUpdateError(f"Failed to clear slot '{slot_name}'.", 500)
+            elif not set_slot_value(instance, slot, prepared_values[0]):
+                raise InstanceUpdateError(
+                    f"Failed to set slot '{slot_name}'.",
+                    500,
+                )
+
+    return CreatedInstance(instance=instance, description=description_for_response, external_summary=external_summary), name_updated
+
+
 @api_bp.post("/instances")
 def create_instance():
     """Create a new instance in the Protégé knowledge base."""
@@ -873,6 +1101,66 @@ def create_instances_batch():
             }
         ),
         201,
+    )
+
+
+@api_bp.post("/instances/<string:instance_id>")
+def update_instance(instance_id: str):
+    """Update an existing instance."""
+    kb = get_knowledge_base()
+    if kb is None:
+        return jsonify({"error": "Knowledge Base not loaded!"}), 500
+
+    inst = kb.getInstance(instance_id)
+    if inst is None:
+        return jsonify({"error": f"Instance '{instance_id}' not found."}), 404
+
+    payload, error = load_json_body()
+    if payload is None:
+        return jsonify({"error": error or "JSON body is required."}), 400
+
+    created_frames: List[object] = []
+    touched_slots = {}
+    try:
+        original_name = str(inst.getBrowserText())
+    except Exception:
+        original_name = None
+
+    try:
+        updated, name_updated = update_instance_from_payload(
+            kb,
+            inst,
+            payload,
+            created_frames,
+            touched_slots,
+        )
+    except InstanceUpdateError as exc:
+        rollback_instances(kb, created_frames)
+        revert_instance_changes(inst, touched_slots, original_name, revert_name=True)
+        return jsonify({"error": str(exc)}), exc.status_code
+    except Exception as exc:  # pylint: disable=broad-except
+        rollback_instances(kb, created_frames)
+        revert_instance_changes(inst, touched_slots, original_name, revert_name=True)
+        return jsonify({"error": f"Unexpected error: {exc}"}), 500
+
+    persisted, save_errors = persist_or_rollback(kb, created_frames)
+    if not persisted:
+        revert_instance_changes(inst, touched_slots, original_name, revert_name=name_updated)
+        error_body = {"error": "Failed to persist Protégé project."}
+        if save_errors:
+            error_body["details"] = save_errors
+        return jsonify(error_body), 500
+
+    instance_payload = serialize_instance(
+        updated.instance,
+        updated.description,
+        updated.external_summary,
+    )
+    return jsonify(
+        {
+            "message": "Instance updated successfully.",
+            "instance": instance_payload,
+        }
     )
 
 
