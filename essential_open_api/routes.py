@@ -19,7 +19,7 @@ from .jvm import (
 
 api_bp = Blueprint("api", __name__)
 SAFE_FRAME_NAME_RE = re.compile(r"[^0-9A-Za-z_]")
-RESERVED_FIELDS = {"className", "name", "description", "externalId"}
+RESERVED_FIELDS = {"className", "name", "description", "externalId", "id"}
 NAME_SLOT_CANDIDATES = ("name_", "name", "relation_name", ":relation_name")
 
 
@@ -969,6 +969,30 @@ def update_instance_from_payload(kb, instance, payload: dict, created_frames: Li
             if entry is None:
                 continue
             if isinstance(entry, dict):
+                entry_id = str(entry.get("id", "")).strip()
+                if entry_id:
+                    existing = kb.getInstance(entry_id)
+                    if existing is None:
+                        raise InstanceUpdateError(
+                            f"Instance '{entry_id}' not found for slot '{slot_name}'.",
+                            404,
+                        )
+                    if "className" in entry:
+                        expected_class = str(entry.get("className") or "").strip()
+                        if expected_class:
+                            try:
+                                current_cls = existing.getDirectType()
+                                current_name = str(current_cls.getName()) if current_cls else ""
+                            except Exception:
+                                current_name = ""
+                            if current_name and expected_class != current_name:
+                                raise InstanceUpdateError(
+                                    f"Instance '{entry_id}' is not of class '{expected_class}'.",
+                                    409,
+                                )
+                    prepared_values.append(existing)
+                    continue
+
                 if "className" not in entry:
                     raise InstanceUpdateError("Field 'className' is required for nested objects.", 400)
                 try:
@@ -1104,7 +1128,7 @@ def create_instances_batch():
     )
 
 
-@api_bp.post("/instances/<string:instance_id>")
+@api_bp.route("/instances/<string:instance_id>", methods=["POST", "PATCH"])
 def update_instance(instance_id: str):
     """Update an existing instance."""
     kb = get_knowledge_base()
