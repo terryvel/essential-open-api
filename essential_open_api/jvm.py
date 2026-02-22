@@ -1,15 +1,24 @@
-"""Utilities to bootstrap the JVM required by the API."""
-
-from __future__ import annotations
-
+import os
+from pathlib import Path
 from typing import Optional, Tuple
 
 import jpype
 
-from .config import JARS_DIR, PPRJ_DIR, PPRJ_FILE
+# Configuration - Prefer environment variables, fallback to defaults relative to project root
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+JARS_DIR = Path(os.environ.get("JARS_DIR", BASE_DIR / "jars"))
+PPRJ_DIR = Path(os.environ.get("PPRJ_DIR", BASE_DIR / "resources"))
+
+env_pprj_file = os.environ.get("PPRJ_FILE")
+if env_pprj_file:
+    PPRJ_FILE = Path(env_pprj_file)
+else:
+    PPRJ_FILE = PPRJ_DIR / "essential_baseline_6_20.pprj"
 
 JARS_DIR.mkdir(parents=True, exist_ok=True)
 PPRJ_DIR.mkdir(parents=True, exist_ok=True)
+
 
 # Collect all jar files placed in the jars directory.
 CLASSPATH = [str(jar.resolve()) for jar in JARS_DIR.glob("*.jar")]

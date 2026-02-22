@@ -13,4 +13,8 @@ services:
       FLASK_RUN_HOST: 0.0.0.0
       FLASK_RUN_PORT: "5100"
       FLASK_DEBUG: "1"
+      PPRJ_FILE: "/app/resources/essential_baseline_6_20.pprj"
+      JARS_DIR: "/app/jars"
+      PPRJ_DIR: "/app/resources"
+
     command: flask run --debug
