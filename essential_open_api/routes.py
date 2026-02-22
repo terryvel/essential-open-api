@@ -113,47 +113,57 @@ def publish_status():
 
 @api_bp.get("/classes/")
 def list_root_classes():
-    """Return the list of classes at the root (without superclasses)."""
+    """Return the recursive tree of classes starting from the root."""
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
 
-    try:
-        classes = kb.getClses() or []
-    except Exception as exc:
-        return jsonify({"error": f"Failed to enumerate classes: {exc}"}), 500
-
-    root_classes = []
-    for cls in classes:
+    def build_class_tree(node, path):
+        """Recursively build a class tree starting at `node`, avoiding cycles in the current path."""
+        if node is None:
+            return None
         try:
-            supers = cls.getDirectSuperclasses() or []
+            node_id = str(node.getName())
         except Exception:
-            continue
-        if supers:
-            continue
+            return None
+        if node_id in path:
+            return None
+        path = set(path)
+        path.add(node_id)
 
         try:
-            title = str(cls.getBrowserText())
+            title = str(node.getBrowserText())
         except Exception:
             title = ""
         try:
-            subclass_count = int(cls.getDirectSubclassCount())
-        except Exception:
-            subclass_count = 0
-        try:
-            abstract_flag = bool(cls.isAbstract())
+            abstract_flag = bool(node.isAbstract())
         except Exception:
             abstract_flag = False
+        try:
+            direct_instances = len(node.getDirectInstances())
+        except Exception:
+            direct_instances = 0
 
-        root_classes.append(
-            {
-                "id": str(cls.getName()),
-                "title": title,
-                "hasChildren": bool(subclass_count),
-                "count": len(cls.getDirectInstances()),
-                "isAbstract": abstract_flag,
-            }
-        )
+        children_payload = []
+        try:
+            children = node.getDirectSubclasses() or []
+        except Exception:
+            children = []
+        for child in children:
+            child_payload = build_class_tree(child, path)
+            if child_payload:
+                children_payload.append(child_payload)
+
+        payload = {
+            "id": node_id,
+            "title": title,
+            "hasChildren": bool(children_payload),
+            "count": direct_instances,
+            "isAbstract": abstract_flag,
+        }
+        if children_payload:
+            payload["classes"] = children_payload
+        return payload
 
     try:
         root_cls = getattr(kb, "getRootCls", lambda: None)() or kb.getCls(":THING")
@@ -169,7 +179,23 @@ def list_root_classes():
     except Exception:
         current_count = 0
 
-    return jsonify({"class": current_name, "isAbstract": current_is_abstract, "count": current_count, "classes": root_classes})
+    try:
+        root_payload = build_class_tree(root_cls, set())
+    except Exception:
+        root_payload = None
+
+    if root_payload:
+        response_body = {
+            "class": current_name,
+            "title": root_payload.get("title", ""),
+            "hasChildren": root_payload.get("hasChildren", False),
+            "count": current_count,
+            "isAbstract": current_is_abstract,
+            "classes": root_payload.get("classes", []),
+        }
+        return jsonify(response_body)
+
+    return jsonify({"class": current_name, "isAbstract": current_is_abstract, "count": current_count, "classes": []})
 
 
 @api_bp.get("/classes/<string:class_name>/")
