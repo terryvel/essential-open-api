@@ -8,10 +8,6 @@ Required file types:
 - `.pont`
 - `.pprj`
 
-Update the `.pprj` file name in `essential_open_api/config.py` by editing the variable:
-
-```
-PPRJ_FILENAME = "essential_baseline_6_20.pprj"
-```
+Update the PPRJ_DIR and PPRJ_FILE on docker-compose.yml
 
 Set it to match the `.pprj` file you add here so the application can load the project correctly.
