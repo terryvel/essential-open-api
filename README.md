@@ -40,6 +40,18 @@ This starts the Flask API on port `5100` (mapped from the container). The contai
   docker compose build --no-cache
   ```
 
+## API Documentation (Swagger UI)
+
+Interactive API documentation is generated automatically using Open API (Swagger 2.0) through the `flasgger` package.
+
+Once the API is running, you can access the Swagger UI directly in your browser:
+
+[http://localhost:5100/api/](http://localhost:5100/api/)
+
+**Implementation Details:**
+- Every endpoint in the internal `app.route` or `api_bp` paths has attached YAML docstrings representing tags, descriptions, required query strings, path variables, and request/response models.
+- Flasgger generates an interactive HTML interface parsing these properties, mapping dynamic routes directly to the UI for testing endpoints and visualizing schemas.
+
 ## Demo UI (HTML)
 
 The `demo/` directory contains a static HTML page that interacts with the API and demonstrates key endpoints:

@@ -50,7 +50,37 @@ class CreatedInstance:
 
 @api_bp.get("/list_items")
 def list_instances():
-    """List all instances of a given class from the Protégé knowledge base."""
+    """List all instances of a given class from the Protégé knowledge base.
+    ---
+    tags:
+      - Query
+    parameters:
+      - in: query
+        name: class
+        type: string
+        required: true
+        description: The name of the class to list instances of.
+    responses:
+      200:
+        description: A list of instances of the given class.
+        schema:
+          type: object
+          properties:
+            class:
+              type: string
+              example: Business_Capability
+            instances:
+              type: array
+              items:
+                type: string
+              example: ["Sales", "Marketing"]
+      400:
+        description: Missing 'class' parameter.
+      404:
+        description: Class not found.
+      500:
+        description: Knowledge Base not loaded.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -70,7 +100,50 @@ def list_instances():
 
 @api_bp.get("/publish")
 def publish():
-    """Trigger asynchronous publish process using the loaded project."""
+    """Trigger asynchronous publish process using the loaded project.
+    ---
+    tags:
+      - Publish
+    parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            url:
+              type: string
+              example: "http://host.docker.internal:9090/essential_viewer"
+            user:
+              type: string
+              example: "alice"
+            pwd:
+              type: string
+              example: "s3cr3t"
+        description: Optional JSON body. Alternatively, these can be passed as query parameters.
+      - in: query
+        name: url
+        type: string
+        description: "Viewer URL. Default: http://host.docker.internal:9090/essential_viewer"
+      - in: query
+        name: user
+        type: string
+        description: "User username. Default: alice"
+      - in: query
+        name: pwd
+        type: string
+        description: "User password. Default: s3cr3t"
+    responses:
+      200:
+        description: Job started successfully.
+        schema:
+          type: object
+          properties:
+            jobId:
+              type: string
+              example: "550e8400-e29b-41d4-a716-446655440000"
+      500:
+        description: Project not loaded or failed to start job.
+    """
     project = get_project()
     if project is None:
         return jsonify({"error": "Project not loaded!"}), 500
@@ -98,7 +171,38 @@ def publish():
 
 @api_bp.get("/publish-status")
 def publish_status():
-    """Return the status and logs for a given publication job."""
+    """Return the status and logs for a given publication job.
+    ---
+    tags:
+      - Publish
+    parameters:
+      - in: query
+        name: id
+        type: string
+        required: true
+        description: The ID of the publish job.
+    responses:
+      200:
+        description: The status and logs of the publish job.
+        schema:
+          type: object
+          properties:
+            jobId:
+              type: string
+              example: "550e8400-e29b-41d4-a716-446655440000"
+            status:
+              type: string
+              example: "COMPLETED"
+            logs:
+              type: array
+              items:
+                type: string
+              example: ["Starting publish...", "Done."]
+      400:
+        description: Missing 'id' parameter.
+      500:
+        description: Unable to fetch publish status.
+    """
     job_id = request.args.get("id")
     if not job_id:
         return jsonify({"error": "Parameter 'id' is required"}), 400
@@ -113,7 +217,38 @@ def publish_status():
 
 @api_bp.get("/classes/")
 def list_root_classes():
-    """Return the recursive tree of classes starting from the root."""
+    """Return the recursive tree of classes starting from the root.
+    ---
+    tags:
+      - Schema
+    responses:
+      200:
+        description: The recursive tree of classes.
+        schema:
+          type: object
+          properties:
+            class:
+              type: string
+              example: ":THING"
+            title:
+              type: string
+              example: "Thing"
+            hasChildren:
+              type: boolean
+              example: true
+            count:
+              type: integer
+              example: 0
+            isAbstract:
+              type: boolean
+              example: false
+            classes:
+              type: array
+              items:
+                type: object
+      500:
+        description: Knowledge Base not loaded.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -200,7 +335,40 @@ def list_root_classes():
 
 @api_bp.get("/classes/<string:class_name>/")
 def list_child_classes(class_name: str):
-    """Return direct subclasses for a given class."""
+    """Return direct subclasses for a given class.
+    ---
+    tags:
+      - Schema
+    parameters:
+      - in: path
+        name: class_name
+        type: string
+        required: true
+        description: The name of the class.
+    responses:
+      200:
+        description: Details and direct subclasses of the class.
+        schema:
+          type: object
+          properties:
+            class:
+              type: string
+              example: "Business_Layer"
+            isAbstract:
+              type: boolean
+              example: false
+            count:
+              type: integer
+              example: 10
+            classes:
+              type: array
+              items:
+                type: object
+      404:
+        description: Class not found.
+      500:
+        description: Knowledge Base not loaded or enumeration error.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -256,7 +424,25 @@ def list_child_classes(class_name: str):
 
 @api_bp.get("/classes/<string:class_name>/form")
 def get_class_form(class_name: str):
-    """Return the stored form specification JSON for the given class."""
+    """Return the stored form specification JSON for the given class.
+    ---
+    tags:
+      - Schema
+    parameters:
+      - in: path
+        name: class_name
+        type: string
+        required: true
+        description: The name of the class.
+    responses:
+      200:
+        description: The form specification JSON.
+        schema:
+          type: object
+          example: {"Business_Capability": [{"group": "principal", "items": []}]}
+      500:
+        description: Failed to load form.
+    """
     forms_dir = Path(__file__).resolve().parent.parent / "resources" / "forms"
     form_path = forms_dir / f"{class_name}.json"
 
@@ -278,7 +464,44 @@ def get_class_form(class_name: str):
 
 @api_bp.get("/classes/<string:class_name>/slots")
 def list_class_slots(class_name: str):
-    """Return template slots for the given class."""
+    """Return template slots for the given class.
+    ---
+    tags:
+      - Schema
+    parameters:
+      - in: path
+        name: class_name
+        type: string
+        required: true
+        description: The name of the class.
+    responses:
+      200:
+        description: A list of slot definitions for the class.
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              slot:
+                type: string
+                example: "description"
+              label:
+                type: string
+                example: "Description"
+              type:
+                type: string
+                example: "String"
+              min_cardinality:
+                type: integer
+                example: 0
+              max_cardinality:
+                type: integer
+                example: 1
+      404:
+        description: Class not found.
+      500:
+        description: Knowledge Base not loaded or failed to fetch slots.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1053,7 +1276,56 @@ def update_instance_from_payload(kb, instance, payload: dict, created_frames: Li
 
 @api_bp.post("/instances")
 def create_instance():
-    """Create a new instance in the Protégé knowledge base."""
+    """Create a new instance in the Protégé knowledge base.
+    ---
+    tags:
+      - Mutation
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            className:
+              type: string
+              example: Business_Capability
+            name:
+              type: string
+              example: Sales
+            description:
+              type: string
+              example: The Sales capability
+            externalId:
+              type: object
+              properties:
+                sourceName:
+                  type: string
+                  example: external_system
+                id:
+                  type: string
+                  example: ext-123
+        description: JSON body containing className, name, and optional properties.
+    responses:
+      201:
+        description: Instance created successfully.
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Instance created successfully.
+            instance:
+              type: object
+      400:
+        description: Invalid payload or missing fields.
+      404:
+        description: Class not found.
+      409:
+        description: Instance already exists.
+      500:
+        description: Knowledge Base not loaded or creation failed.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1098,7 +1370,51 @@ def create_instance():
 
 @api_bp.post("/instances/batch")
 def create_instances_batch():
-    """Create multiple instances (optionally with nested objects)."""
+    """Create multiple instances (optionally with nested objects).
+    ---
+    tags:
+      - Mutation
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            instances:
+              type: array
+              items:
+                type: object
+                properties:
+                  className:
+                    type: string
+                    example: Business_Capability
+                  name:
+                    type: string
+                    example: Marketing
+        description: JSON body containing an array of instances to create.
+    responses:
+      201:
+        description: Instances created successfully.
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: 1 instance(s) created successfully.
+            instances:
+              type: array
+              items:
+                type: object
+      400:
+        description: Invalid payload or missing fields.
+      404:
+        description: Class not found for an instance.
+      409:
+        description: Instance already exists.
+      500:
+        description: Knowledge Base not loaded or creation failed.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1156,7 +1472,52 @@ def create_instances_batch():
 
 @api_bp.route("/instances/<string:instance_id>", methods=["POST", "PATCH"])
 def update_instance(instance_id: str):
-    """Update an existing instance."""
+    """Update an existing instance.
+    ---
+    tags:
+      - Mutation
+    parameters:
+      - in: path
+        name: instance_id
+        type: string
+        required: true
+        description: The ID of the instance to update.
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            className:
+              type: string
+              example: Business_Capability
+            name:
+              type: string
+              example: Sales Core
+            description:
+              type: string
+              example: Updated description
+        description: JSON body containing className and properties to update.
+    responses:
+      200:
+        description: Instance updated successfully.
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Instance updated successfully.
+            instance:
+              type: object
+      400:
+        description: Invalid payload or missing className.
+      404:
+        description: Instance not found.
+      409:
+        description: Name already exists.
+      500:
+        description: Knowledge Base not loaded or update failed.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1216,7 +1577,32 @@ def update_instance(instance_id: str):
 
 @api_bp.delete("/instances/<string:instance_id>")
 def delete_instance_route(instance_id: str):
-    """Delete an instance from the Protégé knowledge base."""
+    """Delete an instance from the Protégé knowledge base.
+    ---
+    tags:
+      - Mutation
+    parameters:
+      - in: path
+        name: instance_id
+        type: string
+        required: true
+        description: The ID of the instance to delete.
+    responses:
+      200:
+        description: Instance deleted successfully.
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Instance deleted successfully.
+            instance:
+              type: object
+      404:
+        description: Instance not found.
+      500:
+        description: Knowledge Base not loaded or deletion failed.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1245,7 +1631,42 @@ def delete_instance_route(instance_id: str):
 
 @api_bp.get("/instances/<string:instance_id>")
 def get_instance(instance_id: str):
-    """Return details for a specific instance."""
+    """Return details for a specific instance.
+    ---
+    tags:
+      - Query
+    parameters:
+      - in: path
+        name: instance_id
+        type: string
+        required: true
+        description: The ID of the instance.
+      - in: query
+        name: slots
+        type: string
+        description: "A caret-separated string of slots to return (e.g., slotA^slotB). If empty, all slots are returned."
+      - in: query
+        name: maxdepth
+        type: integer
+        description: "Maximum depth for resolving relations. Default: 1."
+    responses:
+      200:
+        description: The instance details.
+        schema:
+          type: object
+          properties:
+            instance:
+              type: object
+            maxDepthUsed:
+              type: integer
+              example: 1
+      400:
+        description: Specific slots must be requested if maxdepth > 3.
+      404:
+        description: Instance not found.
+      500:
+        description: Knowledge Base not loaded.
+    """
     kb = get_knowledge_base()
     if kb is None:
         return jsonify({"error": "Knowledge Base not loaded!"}), 500
@@ -1280,14 +1701,67 @@ def get_instance(instance_id: str):
 
 @api_bp.get("/classes/<string:class_name>/instances")
 def list_instances_by_class(class_name):
-    """
-    Query params:
-      - slots=slotA^slotB^slotC
-      - maxdepth=N                 (se N>3 -> slots é obrigatório)
-      - start=S                    (default 0; aceita 0-based ou 1-based)
-      - count=C                    (default = todos a partir de start)
-      - directinstances=true|false (default false -> inclui subclasses concretas)
-    Retorno inclui: instances, count, total, nextPage (quando houver).
+    """List instances of a class with pagination and depth configuration.
+    ---
+    tags:
+      - Query
+    parameters:
+      - in: path
+        name: class_name
+        type: string
+        required: true
+        description: The name of the class.
+      - in: query
+        name: slots
+        type: string
+        description: "A caret-separated string of slots to return (e.g., slotA^slotB). If empty, all slots are returned."
+      - in: query
+        name: maxdepth
+        type: integer
+        description: "Maximum depth for resolving relations. Default: 1."
+      - in: query
+        name: start
+        type: integer
+        description: "Start index for pagination (0-based or 1-based). Default: 0."
+      - in: query
+        name: count
+        type: integer
+        description: "Number of items to return. Default: all."
+      - in: query
+        name: directinstances
+        type: boolean
+        description: "Only return direct instances if true. Default: false."
+    responses:
+      200:
+        description: A list of instances with pagination info.
+        schema:
+          type: object
+          properties:
+            class:
+              type: string
+              example: Business_Capability
+            instances:
+              type: array
+              items:
+                type: object
+            count:
+              type: integer
+              example: 5
+            total:
+              type: integer
+              example: 20
+            maxDepthUsed:
+              type: integer
+              example: 1
+            nextPage:
+              type: string
+              example: "start=6,count=5"
+      400:
+        description: Specific slots must be requested if maxdepth > 3.
+      404:
+        description: Class not found.
+      500:
+        description: Knowledge Base not loaded or enumeration failed.
     """
     kb = get_knowledge_base()
     if kb is None:
